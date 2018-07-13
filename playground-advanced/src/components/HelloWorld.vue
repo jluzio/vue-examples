@@ -1,8 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <div><input type="text" v-model="test"></div>
-    <div>{{test}}</div>
+    <div>edit: <input type="text" v-model="msg"></div>
     <p>
       For guide and recipes on how to configure / customize this project,<br>
       check out the
@@ -40,7 +39,6 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 @Component
 export default class HelloWorld extends Vue {
   @Prop() private msg!: string;
-  @Prop() private test!: string;
 }
 </script>
 

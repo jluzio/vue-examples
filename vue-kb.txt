@@ -2,3 +2,39 @@ https://vuejs.org/v2/guide/
 
 https://github.com/vuejs/vue-cli
 https://cli.vuejs.org/
+
+
+-- Global libraries from npm --
+Example jQuery + plugin (datepicker)
+npm install jquery
+npm install jquery-datepicker
+
+1) in main.js / component
+- ex main.js:
+import jQuery from 'jquery';
+import datepickerFactory from 'jquery-datepicker';
+import datepickerI18nFactory from 'jquery-datepicker/i18n/jquery.ui.datepicker-pt';
+ 
+// Just pass your jquery instance and you're done
+datepickerFactory(jQuery);
+datepickerI18nFactory(jQuery);
+
+Object.defineProperty(Vue.prototype, '$jQuery', { value: jQuery });
+
+2) as a plugin
+- plugin/jquery.js
+import Vue from 'vue';
+import jQuery from 'jquery';
+
+const Plugin = {
+  install(Vue, options) {
+    Object.defineProperty(Vue.prototype, '$jQuery', { value: jQuery });  
+  }
+};
+
+Vue.use(Plugin);
+
+export default Plugin;
+
+- main.js
+import 'plugins/jquery'

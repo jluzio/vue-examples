@@ -2,16 +2,19 @@
   <div id="app">
     <img src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
+    DatePicker: <DatePicker />
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import DatePicker from './components/DatePicker.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    HelloWorld,
+    DatePicker
   }
 }
 </script>

@@ -3,6 +3,7 @@ import Vue from 'vue'
 // Global Libraries/Plugins
 // TODO: find if its recommended use min or source and let webpack(?) eventually minimize it?
 import './plugins/axios'
+import './plugins/debug'
 import './plugins/jquery'
 import './plugins/jquery-datepicker'
 import 'jquery-ui-themes/themes/base/jquery-ui.css'

@@ -9,6 +9,7 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
+    "debug": "^3.1.0",
     "jquery": "^3.3.1",
     "jquery-datepicker": "^1.12.3",
     "jquery-ui-themes": "^1.12.0",

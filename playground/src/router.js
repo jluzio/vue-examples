@@ -4,6 +4,7 @@ import store from './store'
 import mutationTypes from './store/mutation-types'
 import Home from './views/Home.vue'
 import Login from './views/Login.vue'
+import Tests from './views/Tests.vue'
 import ApiTest from './views/ApiTest.vue'
 
 const log = Vue.prototype.$debug('authLog')
@@ -57,6 +58,11 @@ const router = new Router({
       path: '/home',
       name: 'home',
       component: Home
+    },
+    {
+      path: '/tests',
+      name: 'tests',
+      component: Tests
     },
     {
       path: '/about',

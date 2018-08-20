@@ -6,6 +6,9 @@ https://cli.vuejs.org/
 Javascript ES6 features
 http://es6-features.org/#Constants
 
+Debugging in VS Code
+https://vuejs.org/v2/cookbook/debugging-in-vscode.html
+
 
 -- Global libraries from npm --
 Example jQuery + plugin (datepicker)

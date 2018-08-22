@@ -1,7 +1,15 @@
+Vue
 https://vuejs.org/v2/guide/
 
+Vue Cli:
 https://github.com/vuejs/vue-cli
 https://cli.vuejs.org/
+
+Vue Router:
+https://router.vuejs.org/
+
+Vuex:
+https://vuex.vuejs.org/
 
 Javascript ES6 features
 http://es6-features.org/#Constants

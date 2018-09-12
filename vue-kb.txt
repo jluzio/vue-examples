@@ -14,8 +14,35 @@ https://vuex.vuejs.org/
 Javascript ES6 features
 http://es6-features.org/#Constants
 
-Debugging in VS Code
+--- VS Code ---
+- Debugging
 https://vuejs.org/v2/cookbook/debugging-in-vscode.html
+
+- Plugins
+ - Vetur (octref.vetur)
+ - ESLint (dbaeumer.vscode-eslint)
+
+- Settings in VS Code for auto-lint fixes
+.vscode/settings.json
+{
+    "editor.tabSize": 2,
+    "vetur.format.defaultFormatter.js": "vscode-typescript",
+    "eslint.autoFixOnSave": true,
+    "eslint.validate": [
+      {
+        "language": "vue",
+        "autoFix": true
+      },
+      {
+        "language": "html",
+        "autoFix": true
+      },
+      {
+        "language": "javascript",
+        "autoFix": true
+      }
+    ]
+}
 
 
 -- Global libraries from npm --

@@ -7,7 +7,9 @@ import './plugins/debug'
 import './plugins/jquery'
 import './plugins/jquery-datepicker'
 import 'jquery-ui-themes/themes/base/jquery-ui.css'
-//import 'jquery-ui-themes/themes/base/jquery-ui.min.css'
+// import 'jquery-ui-themes/themes/base/jquery-ui.min.css'
+
+import '@/plugins/directives'
 
 import App from './App.vue'
 import router from './router'

@@ -7,14 +7,13 @@
 
 <script>
 export default {
-  name: 'DatePicker',
+  name: 'Datepicker',
   props: {
     field: String
   },
   mounted() {
     if (this.$jQuery) {
-      this.$jQuery('.datepicker').datepicker();
-      this.$jQuery.datepicker.regional['pt'];
+      this.$jQuery('.datepicker').datepicker()
     }
   }
 }

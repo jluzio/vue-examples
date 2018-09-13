@@ -1,29 +1,29 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    <DatePicker field="Date" />
+    <div>Date: <datepicker field="Date" /></div>
     <dependency-injection-parent />
     <directives />
-    <model />
+    <model-testing greeting-text="testy" />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld'
-import DatePicker from '@/components/DatePicker'
+import Datepicker from '@/components/Datepicker'
 import DependencyInjectionParent from '@/components/DependencyInjectionParent'
 import Directives from '@/components/Directives'
-import Model from '@/components/Model'
+import ModelTesting from '@/components/ModelTesting'
 
 export default {
   name: 'home',
   components: {
     HelloWorld,
-    DatePicker,
+    Datepicker,
     DependencyInjectionParent,
     Directives,
-    Model
+    ModelTesting
   }
 }
 </script>

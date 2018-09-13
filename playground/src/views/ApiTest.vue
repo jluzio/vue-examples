@@ -8,9 +8,9 @@
 
 <script>
 import Vue from 'vue'
-import apiTestService from '@/services/apiTest.service'
+import apiTestService from '@/services/api-test.service'
 
-const log = Vue.prototype.$log.debug;
+const log = Vue.prototype.$log.debug
 
 export default {
   name: 'ApiTest',
@@ -24,28 +24,28 @@ export default {
     }
   },
   mounted: function() {
-    this.downloadData();
+    this.downloadData()
   },
   methods: {
     downloadData() {
-      //let url = 'https://jsonplaceholder.typicode.com/posts';
-      //let url = 'http://localhost:9080/DutyTravelWAR/api/debug/cors/appInfo';
-      let url = 'http://localhost:9080/DutyTravelWAR/api/private/debug/appInfo';
-      let vm = this;
+      // let url = 'https://jsonplaceholder.typicode.com/posts';
+      // let url = 'http://localhost:9080/DutyTravelWAR/api/debug/cors/appInfo';
+      let url = 'http://localhost:9080/DutyTravelWAR/api/private/debug/appInfo'
+      let vm = this
 
-      vm.serviceMessage = "Retrieving data";
+      vm.serviceMessage = 'Retrieving data'
       log(`sending token: ${this.$store.getters.getToken}`)
 
       apiTestService.getPrivateResource()
         .then(response => {
-          vm.serviceResponse = response.data;
-          vm.serviceMessage = "Sucess";
+          vm.serviceResponse = response.data
+          vm.serviceMessage = 'Sucess'
         })
         .catch(error => {
-          vm.serviceResponse = null;
-          vm.serviceMessage = "Error: " + e;
+          vm.serviceResponse = null
+          vm.serviceMessage = 'Error: ' + e
         })
-    },
+    }
     /*
     downloadDataWithAsync() {
       let vm = this;

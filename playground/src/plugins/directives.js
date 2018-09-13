@@ -1,6 +1,6 @@
 import '@/directives/dup.directive'
 
-import AppendTestDirective from '@/directives/appendTest.directive'
+import AppendTestDirective from '@/directives/append-test.directive'
 
 import Vue from 'vue'
 

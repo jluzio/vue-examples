@@ -12,7 +12,7 @@ import Vue from 'vue'
 // imported in main.js
 // import '@/directives/dup.directive'
 import '@/directives/square.directive'
-import AppendTestDirective from '@/directives/appendTest.directive'
+import AppendTestDirective from '@/directives/append-test.directive'
 
 export default {
   name: 'Directives',

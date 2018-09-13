@@ -1,7 +1,7 @@
 import mutationTypes from './mutation-types'
 import Vue from 'vue'
 
-const log = Vue.prototype.$debug("authLog")
+const log = Vue.prototype.$debug('authLog')
 
 const mutations = {
   [mutationTypes.LOGIN_PENDING] (state) {

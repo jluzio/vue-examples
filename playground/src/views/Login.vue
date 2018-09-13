@@ -11,7 +11,7 @@
       <label for="inputPassword" class="sr-only">Password</label>
       <input id="inputPassword" v-model="password" type="password" class="form-control" placeholder="Password" required>
       <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-    </form>    
+    </form>
   </div>
 </template>
 
@@ -32,19 +32,19 @@ export default {
         username: this.username,
         password: this.password
       })
-      .then(() => {
-        this.$log.debug("login.vue: handle response")        
-        if (this.$store.getters.isLoggedIn) {
-          this.log = "logged in"
-          this.$router.push('/home')
-        } else {
-          this.log = "not logged in"
-          //this.$router.push('/home')
-        }
-      })
-      .catch(() => {
-          this.log = "error"
-      })
+        .then(() => {
+          this.$log.debug('login.vue: handle response')
+          if (this.$store.getters.isLoggedIn) {
+            this.log = 'logged in'
+            this.$router.push('/home')
+          } else {
+            this.log = 'not logged in'
+          // this.$router.push('/home')
+          }
+        })
+        .catch(() => {
+          this.log = 'error'
+        })
     }
   }
 }

@@ -3,29 +3,29 @@ import mutationTypes from './mutation-types'
 import router from '../router'
 import loginService from '../services/login.service'
 
-const log = Vue.prototype.$debug("authLog")
+const log = Vue.prototype.$debug('authLog')
 
 const actions = {
   login: ({ commit }, credentials) => {
-    log("actions.login: starting")
+    log('actions.login: starting')
     commit(mutationTypes.LOGIN_PENDING)
     return loginService.login(credentials)
       .then(response => {
-        log("action.login: then")
+        log('action.login: then')
         log(response)
         if (response.success) {
-          log("actions.login: success")
+          log('actions.login: success')
           commit(mutationTypes.LOGIN_SUCCESS, {
             username: response.username,
             token: response.token
           })
         } else {
-          log("actions.login: wrong creds")
+          log('actions.login: wrong creds')
           commit(mutationTypes.LOGIN_WRONG_CREDENTIALS)
         }
       })
       .catch(reason => {
-        log("actions.login: catch")
+        log('actions.login: catch')
         log(reason)
         commit(mutationTypes.LOGIN_ERROR)
       })
@@ -33,7 +33,7 @@ const actions = {
   logout: ({ commit }) => {
     commit(mutationTypes.LOGOUT)
     router.push('/login')
-  }  
+  }
 }
 
 export default actions

@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    <div>Date: <datepicker field="Date" /></div>
+    <datepicker field="Date" />
     <dependency-injection-parent />
     <directives />
     <model-testing greeting-text="testy" />

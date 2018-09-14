@@ -14,6 +14,9 @@
       <test-item test-id="model-testing" data-parent="#testsAccordion">
         <model-testing greeting-text="testy" />
       </test-item>
+      <test-item test-id="event-testing" data-parent="#testsAccordion">
+        <event-testing />
+      </test-item>
     </div>
   </div>
 </template>
@@ -26,6 +29,7 @@ import DependencyInjectionParent from '@/components/DependencyInjectionParent'
 import Directives from '@/components/Directives'
 import ModelTesting from '@/components/ModelTesting'
 import TestItem from '@/components/TestItem'
+import EventTesting from '@/components/EventTesting'
 
 export default {
   name: 'home',
@@ -35,7 +39,8 @@ export default {
     DependencyInjectionParent,
     Directives,
     ModelTesting,
-    TestItem
+    TestItem,
+    EventTesting
   }
 }
 </script>

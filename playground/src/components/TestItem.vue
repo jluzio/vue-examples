@@ -10,7 +10,7 @@ import BaseCard from './BaseCard'
 export default {
   name: 'TestItem',
   props: ['testId', 'testName', 'dataParent', 'showCard'],
-  components: {BaseCard},
+  // components: {BaseCard},
   computed: {
     cardHeader() {
       return 'Test: ' + (this.testName ? this.testName : this.testId)

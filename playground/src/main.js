@@ -1,5 +1,7 @@
 import Vue from 'vue'
 
+import './utils/mixins'
+
 // Global Libraries/Plugins
 // TODO: find if its recommended use min or source and let webpack(?) eventually minimize it?
 import './plugins/axios'
@@ -10,6 +12,8 @@ import 'jquery-ui-themes/themes/base/jquery-ui.css'
 // import 'jquery-ui-themes/themes/base/jquery-ui.min.css'
 
 import '@/plugins/directives'
+
+import './global-components'
 
 import App from './App.vue'
 import router from './router'

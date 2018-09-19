@@ -10,6 +10,8 @@
       <test-item-tab-link testId="event-testing" />
       <test-item-tab-link testId="dynamic-components" />
       <test-item-tab-link testId="async-component-testing" />
+      <test-item-tab-link testId="global-components" />
+      <test-item-tab-link testId="props-testing" />
     </ul>
     <div class="tab-content" id="myTabContent">
       <test-item-tab testId="datepicker">
@@ -33,6 +35,12 @@
       <test-item-tab testId="async-component-testing">
         <async-component-testing />
       </test-item-tab>
+      <test-item-tab testId="global-components">
+        <global-components />
+      </test-item-tab>
+      <test-item-tab testId="props-testing">
+        <props-testing/>
+      </test-item-tab>
     </div>
   </div>
 </template>
@@ -51,6 +59,8 @@ import ModelTesting from '@/components/ModelTesting'
 import EventTesting from '@/components/EventTesting'
 import DynamicComponents from '@/components/dynamic-components/DynamicComponents'
 import AsyncComponentTesting from '@/components/async-components/AsyncComponentTesting'
+import GlobalComponents from '@/components/GlobalComponents'
+import PropsTesting from '@/components/PropsTesting'
 
 export default {
   name: 'home',
@@ -65,7 +75,9 @@ export default {
     ModelTesting,
     EventTesting,
     DynamicComponents,
-    AsyncComponentTesting
+    AsyncComponentTesting,
+    GlobalComponents,
+    PropsTesting
   }
 }
 </script>

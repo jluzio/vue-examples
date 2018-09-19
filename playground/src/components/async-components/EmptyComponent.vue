@@ -1,10 +1,10 @@
 <template>
-  <div>Async, baby!</div>
+  <div>Empty</div>
 </template>
 
 <script>
 export default {
-  name: 'AsyncLoadedComponent'
+  name: 'EmptyComponent'
 }
 </script>
 

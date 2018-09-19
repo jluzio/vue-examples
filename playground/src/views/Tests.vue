@@ -9,7 +9,7 @@
       <test-item-tab-link testId="model-testing" />
       <test-item-tab-link testId="event-testing" />
       <test-item-tab-link testId="dynamic-components" />
-      <test-item-tab-link testId="async-components" />
+      <test-item-tab-link testId="async-component-testing" />
     </ul>
     <div class="tab-content" id="myTabContent">
       <test-item-tab testId="datepicker">
@@ -30,8 +30,8 @@
       <test-item-tab testId="dynamic-components">
         <dynamic-components />
       </test-item-tab>
-      <test-item-tab testId="async-components">
-        <async-components />
+      <test-item-tab testId="async-component-testing">
+        <async-component-testing />
       </test-item-tab>
     </div>
   </div>
@@ -50,7 +50,7 @@ import Directives from '@/components/Directives'
 import ModelTesting from '@/components/ModelTesting'
 import EventTesting from '@/components/EventTesting'
 import DynamicComponents from '@/components/dynamic-components/DynamicComponents'
-import AsyncComponents from '@/components/async-components/AsyncComponents'
+import AsyncComponentTesting from '@/components/async-components/AsyncComponentTesting'
 
 export default {
   name: 'home',
@@ -65,7 +65,7 @@ export default {
     ModelTesting,
     EventTesting,
     DynamicComponents,
-    AsyncComponents
+    AsyncComponentTesting
   }
 }
 </script>

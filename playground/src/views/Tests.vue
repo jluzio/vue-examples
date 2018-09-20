@@ -8,10 +8,13 @@
       <base-tab-link tabId="event" />
       <base-tab-link tabId="directive" />
       <base-tab-link tabId="datepicker" />
+      <base-tab-link tabId="slot" />
       <base-tab-link tabId="dependency-injection" />
       <base-tab-link tabId="dynamic-component" />
       <base-tab-link tabId="async-component" />
+      <base-tab-link tabId="mixin" />
     </ul>
+    <div class="pt-3"></div>
     <div class="tab-content" id="myTabContent">
       <base-tab tabId="datepicker">
         <datepicker field="Date" />
@@ -37,6 +40,12 @@
       <base-tab tabId="props">
         <props-testing/>
       </base-tab>
+      <base-tab tabId="mixin">
+        <mixin-testing/>
+      </base-tab>
+      <base-tab tabId="slot">
+        <slot-testing/>
+      </base-tab>
     </div>
   </div>
 </template>
@@ -48,10 +57,12 @@ import Datepicker from '@/components/Datepicker'
 import DependencyInjectionTesting from '@/components/tests/DependencyInjectionTesting'
 import DirectiveTesting from '@/components/tests/DirectiveTesting'
 import ModelTesting from '@/components/tests/ModelTesting'
-import EventTesting from '@/components/tests/EventTesting'
+import EventTesting from '@/components/tests/events/EventTesting'
 import DynamicComponentTesting from '@/components/tests/dynamic-components/DynamicComponentTesting'
 import AsyncComponentTesting from '@/components/tests/async-components/AsyncComponentTesting'
 import PropsTesting from '@/components/tests/PropsTesting'
+import MixinTesting from '@/components/tests/MixinTesting'
+import SlotTesting from '@/components/tests/slots/SlotTesting'
 
 // Note: components in @/components with Base prefix get automatically loaded due to global-components.js
 
@@ -66,7 +77,9 @@ export default {
     EventTesting,
     DynamicComponentTesting,
     AsyncComponentTesting,
-    PropsTesting
+    PropsTesting,
+    MixinTesting,
+    SlotTesting
   }
 }
 </script>

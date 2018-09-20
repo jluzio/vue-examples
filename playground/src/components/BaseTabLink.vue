@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: 'TestItemTabLink',
+  name: 'BaseTabLink',
   props: {
     tabId: {
       String,

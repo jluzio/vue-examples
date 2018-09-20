@@ -3,80 +3,69 @@
     <img alt="Vue logo" src="../assets/logo.png">
 
     <ul class="nav nav-tabs" id="myTab" role="tablist">
-      <test-item-tab-link testId="datepicker" />
-      <test-item-tab-link testId="dependency-injection" />
-      <test-item-tab-link testId="directives" />
-      <test-item-tab-link testId="model-testing" />
-      <test-item-tab-link testId="event-testing" />
-      <test-item-tab-link testId="dynamic-components" />
-      <test-item-tab-link testId="async-component-testing" />
-      <test-item-tab-link testId="global-components" />
-      <test-item-tab-link testId="props-testing" />
+      <base-tab-link tabId="props" />
+      <base-tab-link tabId="model" />
+      <base-tab-link tabId="event" />
+      <base-tab-link tabId="directive" />
+      <base-tab-link tabId="datepicker" />
+      <base-tab-link tabId="dependency-injection" />
+      <base-tab-link tabId="dynamic-component" />
+      <base-tab-link tabId="async-component" />
     </ul>
     <div class="tab-content" id="myTabContent">
-      <test-item-tab testId="datepicker">
+      <base-tab tabId="datepicker">
         <datepicker field="Date" />
-      </test-item-tab>
-      <test-item-tab testId="dependency-injection">
-        <dependency-injection-parent />
-      </test-item-tab>
-      <test-item-tab testId="directives">
-        <directives />
-      </test-item-tab>
-      <test-item-tab testId="model-testing">
+      </base-tab>
+      <base-tab tabId="dependency-injection">
+        <dependency-injection-testing />
+      </base-tab>
+      <base-tab tabId="directive">
+        <directive-testing />
+      </base-tab>
+      <base-tab tabId="model">
         <model-testing greeting-text="testy" />
-      </test-item-tab>
-      <test-item-tab testId="event-testing">
+      </base-tab>
+      <base-tab tabId="event">
         <event-testing />
-      </test-item-tab>
-      <test-item-tab testId="dynamic-components">
-        <dynamic-components />
-      </test-item-tab>
-      <test-item-tab testId="async-component-testing">
+      </base-tab>
+      <base-tab tabId="dynamic-component">
+        <dynamic-component-testing />
+      </base-tab>
+      <base-tab tabId="async-component">
         <async-component-testing />
-      </test-item-tab>
-      <test-item-tab testId="global-components">
-        <global-components />
-      </test-item-tab>
-      <test-item-tab testId="props-testing">
+      </base-tab>
+      <base-tab tabId="props">
         <props-testing/>
-      </test-item-tab>
+      </base-tab>
     </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import TestItemTabLink from '@/components/TestItemTabLink'
-import TestItemTab from '@/components/TestItemTab'
-import TestItem from '@/components/TestItem'
-
 import HelloWorld from '@/components/HelloWorld'
 import Datepicker from '@/components/Datepicker'
-import DependencyInjectionParent from '@/components/DependencyInjectionParent'
-import Directives from '@/components/Directives'
-import ModelTesting from '@/components/ModelTesting'
-import EventTesting from '@/components/EventTesting'
-import DynamicComponents from '@/components/dynamic-components/DynamicComponents'
-import AsyncComponentTesting from '@/components/async-components/AsyncComponentTesting'
-import GlobalComponents from '@/components/GlobalComponents'
-import PropsTesting from '@/components/PropsTesting'
+import DependencyInjectionTesting from '@/components/tests/DependencyInjectionTesting'
+import DirectiveTesting from '@/components/tests/DirectiveTesting'
+import ModelTesting from '@/components/tests/ModelTesting'
+import EventTesting from '@/components/tests/EventTesting'
+import DynamicComponentTesting from '@/components/tests/dynamic-components/DynamicComponentTesting'
+import AsyncComponentTesting from '@/components/tests/async-components/AsyncComponentTesting'
+import PropsTesting from '@/components/tests/PropsTesting'
+
+// Note: components in @/components with Base prefix get automatically loaded due to global-components.js
 
 export default {
   name: 'home',
   components: {
-    TestItemTabLink,
-    TestItemTab,
-    TestItem,
     HelloWorld,
     Datepicker,
-    DependencyInjectionParent,
-    Directives,
+    DependencyInjectionTesting,
+    DirectiveTesting,
     ModelTesting,
     EventTesting,
-    DynamicComponents,
+    DynamicComponentTesting,
     AsyncComponentTesting,
-    GlobalComponents,
     PropsTesting
   }
 }

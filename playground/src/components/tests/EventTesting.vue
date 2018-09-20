@@ -3,19 +3,19 @@
     <button @click="incrementCounterChildrenViaRef">Inc Child Counter via Ref</button>
     <button @click="incrementCounterChildrenViaEventBus">Inc Child Counter via Event Bus</button>
     <div>Parent Counter: {{ counter }}</div>
-    <event-testing-child ref="child1" @increment-parent-counter="onIncrementCounter" />
-    <event-testing-child ref="child2" @increment-parent-counter="onIncrementCounter" />
-    <event-testing-child ref="child3" @increment-parent-counter="onIncrementCounter" />
+    <event-testing-target ref="child1" @increment-parent-counter="onIncrementCounter" />
+    <event-testing-target ref="child2" @increment-parent-counter="onIncrementCounter" />
+    <event-testing-target ref="child3" @increment-parent-counter="onIncrementCounter" />
   </div>
 </template>
 
 <script>
-import EventTestingChild from './EventTestingChild'
-import {eventBus} from '../services/eventBus'
+import EventTestingTarget from './EventTestingTarget'
+import {eventBus} from '@/services/eventBus'
 
 export default {
   name: 'EventTesting',
-  components: {EventTestingChild},
+  components: {EventTestingTarget},
   data() {
     return {
       counter: 0

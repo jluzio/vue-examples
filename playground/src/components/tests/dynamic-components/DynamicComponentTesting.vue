@@ -25,7 +25,7 @@ import DcTab2 from './DcTab2'
 import DcTab3 from './DcTab3'
 
 export default {
-  name: 'DynamicComponents',
+  name: 'DynamicComponentTesting',
   components: {
     DcTab1,
     DcTab2,

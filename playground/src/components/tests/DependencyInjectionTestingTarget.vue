@@ -6,13 +6,13 @@
 
 <script>
 export default {
-  name: 'DependencyInjectionChild',
+  name: 'DependencyInjectionTestingTarget',
   inject: ['foo'],
   props: {
     msg: String
   },
   mounted() {
-    console.log("var: ", this.foo.bar())
+    console.log('var: ', this.foo.bar())
   }
 }
 

@@ -15,7 +15,7 @@ import '@/directives/square.directive'
 import AppendTestDirective from '@/directives/append-test.directive'
 
 export default {
-  name: 'Directives',
+  name: 'DirectiveTesting',
   directives: {
     appendTestLocal: Vue.directive(null, AppendTestDirective)
   },

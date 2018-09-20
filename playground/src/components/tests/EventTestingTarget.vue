@@ -6,10 +6,10 @@
 </template>
 
 <script>
-import {eventBus} from '../services/eventBus'
+import {eventBus} from '@/services/eventBus'
 
 export default {
-  name: 'EventTestingChild',
+  name: 'EventTestingTarget',
   data() {
     return {
       counter: 0

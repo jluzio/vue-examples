@@ -1,36 +1,36 @@
 <template>
   <div>
-    <dependency-injection-child />
+    <dependency-injection-testing-target />
   </div>
 </template>
 
 <script>
-/* Oficial doc: 
-Provide and inject are primarily provided for advanced plugin / component library use cases. 
+/* Oficial doc:
+Provide and inject are primarily provided for advanced plugin / component library use cases.
 It is NOT recommended to use them in generic application code.
 */
 
 // Should be in some other file
+import DependencyInjectionTestingTarget from './DependencyInjectionTestingTarget'
+
 class Foo {
   bar() {}
 }
 
 class FooA extends Foo {
   bar() {
-    return "bar-a"
+    return 'bar-a'
   }
 }
 
 class FooB extends Foo {
   bar() {
-    return "bar-b"
+    return 'bar-b'
   }
 }
 
-import DependencyInjectionChild from './DependencyInjectionChild'
-
 export default {
-  name: 'DependencyInjectionParent',
+  name: 'DependencyInjectionTesting',
   props: {
     msg: String
   },
@@ -40,7 +40,7 @@ export default {
     }
   },
   components: {
-    DependencyInjectionChild
+    DependencyInjectionTestingTarget
   }
 }
 

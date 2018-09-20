@@ -10,6 +10,7 @@ import 'jquery-ui-themes/themes/base/jquery-ui.css'
 // import 'jquery-ui-themes/themes/base/jquery-ui.min.css'
 
 import '@/plugins/directives'
+import '@/plugins/filters'
 
 import './global-components'
 

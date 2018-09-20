@@ -15,6 +15,8 @@
       <base-tab-link tabId="transition" />
       <base-tab-link tabId="dependency-injection" />
       <base-tab-link tabId="mixin" />
+      <base-tab-link tabId="render-function" />
+      <base-tab-link tabId="filter" />
     </ul>
     <div class="pt-3"></div>
     <div class="tab-content" id="myTabContent">
@@ -54,6 +56,12 @@
       <base-tab tabId="css">
         <css-testing/>
       </base-tab>
+      <base-tab tabId="render-function">
+        <render-function-testing/>
+      </base-tab>
+      <base-tab tabId="filter">
+        <filter-testing/>
+      </base-tab>
     </div>
   </div>
 </template>
@@ -73,6 +81,8 @@ import MixinTesting from '@/components/tests/MixinTesting'
 import SlotTesting from '@/components/tests/slots/SlotTesting'
 import TransitionTesting from '@/components/tests/transitions/TransitionTesting'
 import CssTesting from '@/components/tests/CssTesting'
+import RenderFunctionTesting from '@/components/tests/RenderFunctionTesting'
+import FilterTesting from '@/components/tests/FilterTesting'
 
 // Note: components in @/components with Base prefix get automatically loaded due to global-components.js
 
@@ -91,7 +101,9 @@ export default {
     MixinTesting,
     SlotTesting,
     TransitionTesting,
-    CssTesting
+    CssTesting,
+    RenderFunctionTesting,
+    FilterTesting
   }
 }
 </script>

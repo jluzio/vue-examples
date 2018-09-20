@@ -1,36 +1,36 @@
 <template>
-  <div>
-    <div>square: <span v-square="number" /></div>
-    <div>dup: <span v-dup="text" /></div>
-    <div>appendTest-global: <span v-appendTest="text" /></div>
-    <div>appendTest-local: <span v-appendTestLocal="text" /></div>
-    <div>focus: <input type="text" v-focus placeholder="text goes here..." /></div>
-  </div>
+  <ul class="list-group">
+    <li class="list-group-item">square: <span v-square="number" /></li>
+    <li class="list-group-item">dup: <span v-dup="text" /></li>
+    <li class="list-group-item">appendTest-global: <span v-appendTest="text" /></li>
+    <li class="list-group-item">appendTest-local: <span v-appendTestLocal="text" /></li>
+    <li class="list-group-item">
+      <h5>focus</h5>
+      <button class="btn" @click="focusContentShow = !focusContentShow">Show/Hide</button>
+      <div v-if="focusContentShow" class="form-group col-3 mx-auto">
+        <input type="text" class="form-control" placeholder="not focused content..." />
+        <input type="text" class="form-control" v-focus placeholder="focused content..." />
+      </div>
+    </li>
+  </ul>
 </template>
 
 <script>
-import Vue from 'vue'
-// imported in main.js
-// import '@/directives/dup.directive'
-import '@/directives/square.directive'
+// imported in main.js / plugin : dup and focus
+import SquareDirective from '@/directives/square.directive'
 import AppendTestDirective from '@/directives/append-test.directive'
 
 export default {
   name: 'DirectiveTesting',
   directives: {
-    appendTestLocal: Vue.directive(null, AppendTestDirective),
-    focus: {
-    // directive definition
-      inserted: function (el) {
-        Vue.prototype.$log.debug('focus directive')
-        el.focus()
-      }
-    }
+    appendTestLocal: AppendTestDirective,
+    square: SquareDirective
   },
   data() {
     return {
       number: 42,
-      text: 'text'
+      text: 'text',
+      focusContentShow: false
     }
   }
 }

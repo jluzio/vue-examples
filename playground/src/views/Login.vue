@@ -3,8 +3,9 @@
     <form class="form-signin" @submit.prevent="login({ username, password })">
       <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
       <div class="form-group">
-          <p class='error'>{{error}}</p>
-          <p class='log'>{{log}}</p>
+        <template v-if="message != null">
+          <p :class='"log " + message.type'>{{message.value}}</p>
+        </template>
       </div>
       <label for="inputUsername" class="sr-only">Username</label>
       <input id="inputUsername" v-model="username" type="text" class="form-control" placeholder="Username" required autofocus>
@@ -16,14 +17,20 @@
 </template>
 
 <script>
+class Message {
+  constructor(value, type) {
+    this.value = value
+    this.type = type
+  }
+}
+
 export default {
   name: 'login',
   data () {
     return {
       username: '',
       password: '',
-      error: '',
-      log: ''
+      message: null
     }
   },
   methods: {
@@ -34,16 +41,16 @@ export default {
       })
         .then(() => {
           this.$log.debug('login.vue: handle response')
+          this.message = null
           if (this.$store.getters.isLoggedIn) {
-            this.log = 'logged in'
+            this.message = new Message('Success.', 'info')
             this.$router.push('/home')
           } else {
-            this.log = 'not logged in'
-          // this.$router.push('/home')
+            this.message = new Message('Incorrect user or password.', 'error')
           }
         })
         .catch(() => {
-          this.log = 'error'
+          this.message = new Message('Unknown error.', 'error')
         })
     }
   }
@@ -55,5 +62,8 @@ export default {
 .form-signin {
   width: 50%;
   margin: 0 auto;
+}
+.error {
+  color: red;
 }
 </style>

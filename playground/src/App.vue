@@ -1,12 +1,33 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link>
-      | <router-link to="/about">About</router-link>
-      | <router-link to="/tests">Tests</router-link>
-      | <router-link to="/private/apiTest">Api Test</router-link>
-      | <router-link to="/login">Login</router-link>      
-      | <router-link to="/logout">Logout</router-link>      
+      <ul class="nav nav-tabs justify-content-center">
+        <li class="nav-item">
+          <router-link class="nav-link" to="/">Home</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link" to="/about">About</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link" to="/tests">Tests</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link" to="/private/apiTest">Api Test</router-link>
+        </li>
+        <template v-if="$store.getters.isLoggedIn">
+          <li class="nav-item">
+            <a href="#" class="nav-link disabled">{{ $store.getters.username }}</a>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link" to="/logout">Logout</router-link>
+          </li>
+        </template>
+        <template v-else>
+          <li class="nav-item">
+            <router-link class="nav-link" to="/login">Login</router-link>
+          </li>
+        </template>
+      </ul>
     </div>
     <router-view/>
   </div>

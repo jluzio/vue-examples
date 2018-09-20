@@ -1,7 +1,5 @@
-import Vue from 'vue'
-
-Vue.directive('square', {
+export default {
   bind(el, binding, vnode) {
     el.innerHTML = Math.pow(binding.value, 2)
   }
-})
+}

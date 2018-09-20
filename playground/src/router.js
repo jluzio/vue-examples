@@ -9,26 +9,14 @@ import ApiTest from './views/ApiTest.vue'
 
 const log = Vue.prototype.$debug('authLog')
 
-const hasTokenGuard = (to, from, next) => {
-  log("hasTokenGuard")
-  const token = localStorage.getItem('authToken')
-  const username = localStorage.getItem('username')
-  if (token) {
-    store.commit(mutationTypes.LOGIN_SUCCESS, { token, username })
-    next('/home')
-  } else {
-    next()
-  }
-}
-
 const authGuard = (to, from, next) => {
-  log("authGuard")
-  const publicPages = ['/','/home','/login']
-  const isPublicPage = publicPages.indexOf(to.path) >= 0
+  log('authGuard')
+  // const publicPages = ['/', '/home', '/login']
+  // const isPublicPage = publicPages.indexOf(to.path) >= 0
   const isPrivatePage = to.path.startsWith('/private')
 
   if (to.path === '/logout') {
-    store.commit(mutationTypes.LOGOUT)
+    store.dispatch('logout')
     next('/')
   } else if (store.getters.isLoggedIn) {
     next()
@@ -39,6 +27,19 @@ const authGuard = (to, from, next) => {
   }
 }
 
+const verifyAutoLoginGuard = (to, from, next) => {
+  log('verifyAutoLoginGuard')
+  if (!store.getters.isLoggedIn) {
+    const token = localStorage.getItem('authToken')
+    const username = localStorage.getItem('username')
+    if (token) {
+      log('verifyAutoLoginGuard :: login using token')
+      store.dispatch('autoLogin', { token, username })
+    }
+  }
+  next()
+}
+
 Vue.use(Router)
 
 const router = new Router({
@@ -46,13 +47,12 @@ const router = new Router({
     {
       path: '/',
       name: 'root',
-      component: Home,
+      component: Home
     },
     {
       path: '/login',
       name: 'login',
-      component: Login,
-      beforeEnter: hasTokenGuard
+      component: Login
     },
     {
       path: '/home',
@@ -75,12 +75,13 @@ const router = new Router({
     {
       path: '/private/apiTest',
       name: 'apiTest',
-      component: ApiTest,
+      component: ApiTest
     }
   ]
 })
 
 router.beforeEach((to, from, next) => {
+  verifyAutoLoginGuard(to, from, next)
   authGuard(to, from, next)
 })
 

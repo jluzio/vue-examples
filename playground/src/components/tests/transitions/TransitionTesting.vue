@@ -3,7 +3,7 @@
     <h4>Transitions</h4>
     <ul class="list-group">
       <li class="list-group">
-        <form disabled class="transitions">
+        <div class="transitions">
           <div class="form-group">
             <div class="btn-group" role="group">
               <button class="btn btn-secondary" @click="transition = 'fade'">fade</button>
@@ -21,7 +21,7 @@
               <p v-if="transitionEnabled">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis enim libero, at lacinia diam fermentum id. Pellentesque habitant morbi tristique senectus et netus.</p>
             </transition>
           </div>
-        </form>
+        </div>
       </li>
     </ul>
   </div>

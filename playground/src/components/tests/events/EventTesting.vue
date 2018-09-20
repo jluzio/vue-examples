@@ -7,9 +7,11 @@
           <button class="btn" @click="incrementCounterChildrenViaEventBus">Inc using Event Bus</button>
         </div>
         <div>Parent Counter: {{ counter }}</div>
-        <event-testing-target ref="child1" @increment-parent-counter="onIncrementCounter" />
-        <event-testing-target ref="child2" @increment-parent-counter="onIncrementCounter" />
-        <event-testing-target ref="child3" @increment-parent-counter="onIncrementCounter" />
+        <div class="row col-6 mx-auto">
+          <event-testing-target class="col" ref="child1" @increment-parent-counter="onIncrementCounter" />
+          <event-testing-target class="col" ref="child2" @increment-parent-counter="onIncrementCounter" />
+          <event-testing-target class="col" ref="child3" @increment-parent-counter="onIncrementCounter" />
+        </div>
       </li>
       <li class="list-group-item">
         <h5>checkboxChecked: {{ checkboxChecked }}</h5>

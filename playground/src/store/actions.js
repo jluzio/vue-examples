@@ -2,11 +2,12 @@ import Vue from 'vue'
 import mutationTypes from './mutation-types'
 import router from '../router'
 import loginService from '../services/login.service'
+import objects from '@/utils/objects'
 
 const log = Vue.prototype.$debug('authLog')
 
 const actions = {
-  login: ({ commit }, credentials) => {
+  login: ({ dispatch, commit }, credentials) => {
     log('actions.login: starting')
     commit(mutationTypes.LOGIN_PENDING)
     return loginService.login(credentials)
@@ -15,7 +16,7 @@ const actions = {
         log(response)
         if (response.success) {
           log('actions.login: success')
-          commit(mutationTypes.LOGIN_SUCCESS, {
+          dispatch('successfulLogin', {
             username: response.username,
             token: response.token
           })
@@ -30,9 +31,19 @@ const actions = {
         commit(mutationTypes.LOGIN_ERROR)
       })
   },
-  logout: ({ commit }) => {
+  autoLogin: ({ dispatch, commit }, loginPayload) => {
+    log('actions.autoLogin: starting')
+    dispatch('successfulLogin', loginPayload)
+  },
+  successfulLogin: ({ commit }, loginPayload) => {
+    log('actions.successfulLogin: starting')
+    commit(mutationTypes.LOGIN_SUCCESS, loginPayload)
+  },
+  logout: ({ commit }, options) => {
     commit(mutationTypes.LOGOUT)
-    router.push('/login')
+    const _options = objects.defaultIfNullOrUndefined(options, {})
+    const redirect = objects.defaultIfNullOrUndefined(_options.redirect, '/')
+    router.push(redirect)
   }
 }
 

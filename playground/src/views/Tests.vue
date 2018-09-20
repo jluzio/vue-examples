@@ -17,6 +17,7 @@
       <base-tab-link tabId="mixin" />
       <base-tab-link tabId="render-function" />
       <base-tab-link tabId="filter" />
+      <base-tab-link tabId="store" />
     </ul>
     <div class="pt-3"></div>
     <div class="tab-content" id="myTabContent">
@@ -62,6 +63,9 @@
       <base-tab tabId="filter">
         <filter-testing/>
       </base-tab>
+      <base-tab tabId="store">
+        <store-testing/>
+      </base-tab>
     </div>
   </div>
 </template>
@@ -83,6 +87,7 @@ import TransitionTesting from '@/components/tests/transitions/TransitionTesting'
 import CssTesting from '@/components/tests/CssTesting'
 import RenderFunctionTesting from '@/components/tests/RenderFunctionTesting'
 import FilterTesting from '@/components/tests/FilterTesting'
+import StoreTesting from '@/components/tests/StoreTesting'
 
 // Note: components in @/components with Base prefix get automatically loaded due to global-components.js
 
@@ -103,7 +108,8 @@ export default {
     TransitionTesting,
     CssTesting,
     RenderFunctionTesting,
-    FilterTesting
+    FilterTesting,
+    StoreTesting
   }
 }
 </script>

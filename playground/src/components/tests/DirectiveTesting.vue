@@ -4,6 +4,7 @@
     <div>dup: <span v-dup="text" /></div>
     <div>appendTest-global: <span v-appendTest="text" /></div>
     <div>appendTest-local: <span v-appendTestLocal="text" /></div>
+    <div>focus: <input type="text" v-focus placeholder="text goes here..." /></div>
   </div>
 </template>
 
@@ -17,7 +18,14 @@ import AppendTestDirective from '@/directives/append-test.directive'
 export default {
   name: 'DirectiveTesting',
   directives: {
-    appendTestLocal: Vue.directive(null, AppendTestDirective)
+    appendTestLocal: Vue.directive(null, AppendTestDirective),
+    focus: {
+    // directive definition
+      inserted: function (el) {
+        Vue.prototype.$log.debug('focus directive')
+        el.focus()
+      }
+    }
   },
   data() {
     return {

@@ -2,8 +2,10 @@
   <div>
     <ul class="list-group">
       <li class="list-group-item">
-        <button @click="incrementCounterChildrenViaRef">Inc Child Counter via Ref</button>
-        <button @click="incrementCounterChildrenViaEventBus">Inc Child Counter via Event Bus</button>
+        <div class="btn-group" role="group">
+          <button class="btn" @click="incrementCounterChildrenViaRef">Inc using Ref</button>
+          <button class="btn" @click="incrementCounterChildrenViaEventBus">Inc using Event Bus</button>
+        </div>
         <div>Parent Counter: {{ counter }}</div>
         <event-testing-target ref="child1" @increment-parent-counter="onIncrementCounter" />
         <event-testing-target ref="child2" @increment-parent-counter="onIncrementCounter" />

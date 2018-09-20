@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>Tab {{ tabId }}</div>
-    <button @click="incCounter">Inc Counter</button>
+    <button @click="incCounter" class="btn">Inc Counter</button>
     <p>{{ counter }}</p>
   </div>
 </template>

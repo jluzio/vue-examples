@@ -1,8 +1,10 @@
 <template>
   <div>
-    <button @click="activeComponent = 'EmptyComponent'">EmptyComponent</button>
-    <button @click="activeComponent = 'AsyncComponent'">AsyncComponent</button>
-    <button @click="activeComponent = 'CustomAsyncComponent'">CustomAsyncComponent</button>
+    <div class="btn-group" role="group">
+      <button @click="activeComponent = 'EmptyComponent'" class="btn">Empty</button>
+      <button @click="activeComponent = 'AsyncComponent'" class="btn">Async</button>
+      <button @click="activeComponent = 'CustomAsyncComponent'" class="btn">CustomAsync</button>
+    </div>
     <component :is="activeComponent" />
   </div>
 </template>

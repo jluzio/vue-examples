@@ -1,8 +1,10 @@
 <template>
-  <div>
-    <label>{{field}}:</label>
-    <input type="text" class="datepicker" placeholder="Pick a date">
-  </div>
+  <form disabled class="col-3 mx-auto">
+    <div class="form-group">
+      <label>{{field}}:</label>
+      <input type="text" class="datepicker form-control" placeholder="Pick a date">
+    </div>
+  </form>
 </template>
 
 <script>

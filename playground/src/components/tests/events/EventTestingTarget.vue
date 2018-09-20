@@ -1,7 +1,7 @@
 <template>
   <div>
     <div @increment-child-counter="onIncrementCounter">Child Counter: {{ counter }}</div>
-    <button @click="$emit('increment-parent-counter')">Inc Parent Counter</button>
+    <button class="btn" @click="$emit('increment-parent-counter')">Inc Parent Counter</button>
   </div>
 </template>
 

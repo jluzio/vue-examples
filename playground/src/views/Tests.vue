@@ -5,13 +5,15 @@
     <ul class="nav nav-tabs" id="myTab" role="tablist">
       <base-tab-link tabId="props" />
       <base-tab-link tabId="model" />
+      <base-tab-link tabId="css" />
       <base-tab-link tabId="event" />
       <base-tab-link tabId="directive" />
       <base-tab-link tabId="datepicker" />
       <base-tab-link tabId="slot" />
-      <base-tab-link tabId="dependency-injection" />
       <base-tab-link tabId="dynamic-component" />
       <base-tab-link tabId="async-component" />
+      <base-tab-link tabId="transition" />
+      <base-tab-link tabId="dependency-injection" />
       <base-tab-link tabId="mixin" />
     </ul>
     <div class="pt-3"></div>
@@ -46,6 +48,12 @@
       <base-tab tabId="slot">
         <slot-testing/>
       </base-tab>
+      <base-tab tabId="transition">
+        <transition-testing/>
+      </base-tab>
+      <base-tab tabId="css">
+        <css-testing/>
+      </base-tab>
     </div>
   </div>
 </template>
@@ -63,6 +71,8 @@ import AsyncComponentTesting from '@/components/tests/async-components/AsyncComp
 import PropsTesting from '@/components/tests/PropsTesting'
 import MixinTesting from '@/components/tests/MixinTesting'
 import SlotTesting from '@/components/tests/slots/SlotTesting'
+import TransitionTesting from '@/components/tests/transitions/TransitionTesting'
+import CssTesting from '@/components/tests/CssTesting'
 
 // Note: components in @/components with Base prefix get automatically loaded due to global-components.js
 
@@ -79,7 +89,9 @@ export default {
     AsyncComponentTesting,
     PropsTesting,
     MixinTesting,
-    SlotTesting
+    SlotTesting,
+    TransitionTesting,
+    CssTesting
   }
 }
 </script>

@@ -10,32 +10,50 @@ export class TestData {
 }
 
 const state = {
-  testData: new TestData(0, 'dummy-data')
+  objectData: new TestData(0, 'dummy-data'),
+  simpleData: null
 }
 
 const getters = {
-  getTestData: state => state.testData
+  test_getObjectData: state => state.objectData,
+  test_getSimpleData: state => state.simpleData
 }
 
 const mutations = {
-  testData_submit(state, testData) {
-    log('mutation: testData_submit')
-    state.testData = testData
+  test_mutation_objectData_submit(state, objectData) {
+    log('mutation: test_mutation_objectData_submit')
+    state.objectData = objectData
   },
-  testData_clear(state) {
-    log('mutation: testData_clear')
-    state.testData = null
+  test_mutation_objectData_clear(state) {
+    log('mutation: test_mutation_objectData_clear')
+    state.objectData = null
+  },
+  test_mutation_simpleData_submit(state, simpleData) {
+    log('mutation: test_mutation_simpleData_submit')
+    state.simpleData = simpleData
+  },
+  test_mutation_simpleData_clear(state) {
+    log('mutation: test_mutation_simpleData_clear')
+    state.simpleData = null
   }
 }
 
 const actions = {
-  testData_submitAction: ({ dispatch, commit }, testData) => {
-    log('action: testData_submitAction')
-    commit('testData_submit', testData)
+  test_action_objectData_submit: ({ dispatch, commit }, testData) => {
+    log('action: test_action_objectData_submit')
+    commit('test_mutation_objectData_submit', testData)
   },
-  testData_clearAction: ({ dispatch, commit }, testData) => {
-    log('action: testData_clearAction')
-    commit('testData_clear')
+  test_action_objectData_clear: ({ dispatch, commit }, testData) => {
+    log('action: test_action_objectData_clear')
+    commit('test_mutation_objectData_clear')
+  },
+  test_action_simpleData_submit: ({ dispatch, commit }, testData) => {
+    log('action: test_action_simpleData_submit')
+    commit('test_mutation_simpleData_submit', testData)
+  },
+  test_action_simpleData_clear: ({ dispatch, commit }, testData) => {
+    log('action: test_action_simpleData_clear')
+    commit('test_mutation_simpleData_clear')
   }
 }
 

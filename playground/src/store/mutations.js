@@ -1,5 +1,5 @@
-import mutationTypes from './mutation-types'
 import Vue from 'vue'
+import mutationTypes from './mutation-types'
 
 const log = Vue.prototype.$debug('authLog')
 

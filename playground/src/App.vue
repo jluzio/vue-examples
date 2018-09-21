@@ -51,4 +51,9 @@
     }
   }
 }
+
+.btn-fix-container .btn {
+  margin: 2px;
+}
+
 </style>

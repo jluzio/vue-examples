@@ -6,6 +6,7 @@
       <base-tab-link tabId="props" />
       <base-tab-link tabId="model" />
       <base-tab-link tabId="css" />
+      <base-tab-link tabId="bootstrap" />
       <base-tab-link tabId="event" />
       <base-tab-link tabId="directive" />
       <base-tab-link tabId="datepicker" />
@@ -66,6 +67,9 @@
       <base-tab tabId="store">
         <store-testing/>
       </base-tab>
+      <base-tab tabId="bootstrap">
+        <bootstrap-testing/>
+      </base-tab>
     </div>
   </div>
 </template>
@@ -88,6 +92,7 @@ import CssTesting from '@/components/tests/CssTesting'
 import RenderFunctionTesting from '@/components/tests/RenderFunctionTesting'
 import FilterTesting from '@/components/tests/FilterTesting'
 import StoreTesting from '@/components/tests/StoreTesting'
+import BootstrapTesting from '@/components/tests/BootstrapTesting'
 
 // Note: components in @/components with Base prefix get automatically loaded due to global-components.js
 
@@ -109,7 +114,8 @@ export default {
     CssTesting,
     RenderFunctionTesting,
     FilterTesting,
-    StoreTesting
+    StoreTesting,
+    BootstrapTesting
   }
 }
 </script>

@@ -18,6 +18,10 @@ http://es6-features.org/#Constants
 - Debugging
 https://vuejs.org/v2/cookbook/debugging-in-vscode.html
 
+-- Issues --
+- If v-for'ing without v-key, updates might not work
+
+
 - Plugins
  - Vetur (octref.vetur)
  - ESLint (dbaeumer.vscode-eslint)
@@ -44,6 +48,8 @@ https://vuejs.org/v2/cookbook/debugging-in-vscode.html
     ]
 }
 
+-- Patterns --
+https://learn-vuejs.github.io/vue-patterns/patterns/
 
 -- Global libraries from npm --
 Example jQuery + plugin (datepicker)

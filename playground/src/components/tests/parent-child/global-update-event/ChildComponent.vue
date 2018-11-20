@@ -38,7 +38,7 @@ export default {
   props: ['form'],
   updated() {
     console.log('Child :: updated()')
-    this.$emit('updated-child')
+    this.$emit('update', this.form)
   }
 }
 </script>

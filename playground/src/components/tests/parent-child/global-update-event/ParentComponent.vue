@@ -1,6 +1,6 @@
 <template>
   <div>
-    <child-component :form="form" @updated-child="onUpdatedChild($event)" />
+    <child-component :form="form" @update="onUpdatedChild($event)" />
   </div>
 </template>
 
@@ -29,7 +29,7 @@ export default {
   },
   methods: {
     onUpdatedChild(event) {
-      console.log('Parent :: event:updated-child')
+      console.log('Parent :: event[update]')
     }
   },
   watch: {

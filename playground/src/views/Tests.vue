@@ -19,6 +19,7 @@
       <base-tab-link tabId="render-function" />
       <base-tab-link tabId="filter" />
       <base-tab-link tabId="store" />
+      <base-tab-link tabId="parent-child" />
     </ul>
     <div class="pt-3"></div>
     <div class="tab-content" id="myTabContent">
@@ -70,6 +71,9 @@
       <base-tab tabId="bootstrap">
         <bootstrap-testing/>
       </base-tab>
+      <base-tab tabId="parent-child">
+        <parent-child-testing/>
+      </base-tab>
     </div>
   </div>
 </template>
@@ -93,6 +97,7 @@ import RenderFunctionTesting from '@/components/tests/RenderFunctionTesting'
 import FilterTesting from '@/components/tests/FilterTesting'
 import StoreTesting from '@/components/tests/StoreTesting'
 import BootstrapTesting from '@/components/tests/BootstrapTesting'
+import ParentChildTesting from '@/components/tests/ParentChildTesting'
 
 // Note: components in @/components with Base prefix get automatically loaded due to global-components.js
 
@@ -115,7 +120,8 @@ export default {
     RenderFunctionTesting,
     FilterTesting,
     StoreTesting,
-    BootstrapTesting
+    BootstrapTesting,
+    ParentChildTesting
   }
 }
 </script>

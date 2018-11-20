@@ -1,7 +1,7 @@
 <template>
   <div>
     <p>Note: v-bind.sync="form" is shorthand for v-bind:'var1..N'.sync="form.'var1..N'"</p>
-    <child-component v-bind.sync="form" />
+    <child-component v-bind:form.sync="form" />
   </div>
 </template>
 
@@ -11,11 +11,10 @@ const defaultForm = {
   mail: 'parent@server.org',
   select1: [],
   select2: [],
-  textarea: ''
-}
-
-const watchListener = (property) => (val, oldVal) => {
-  console.log(`Parent :: watchListener(${property}) ${oldVal} -> ${val}`)
+  textarea: '',
+  varHolder: {
+    var: ''
+  }
 }
 
 export default {
@@ -28,9 +27,10 @@ export default {
   updated() {
     console.log('Parent :: updated()')
   },
-  watch: {
-    'form': { handler: watchListener('form') }
-    // 'form': { handler: watchListener('form.mail') }
+  methods: {
+    updateForm(event) {
+      console.log('Parent :: updateForm()', event)
+    }
   }
 }
 </script>

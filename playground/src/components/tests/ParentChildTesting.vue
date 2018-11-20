@@ -1,8 +1,10 @@
 <template>
   <div class="x-tabs">
     <div class="btn-group" role="group">
-      <button @click="activeComponent = 'EventsParentComponent'" class="btn">Events</button>
-      <button @click="activeComponent = 'GlobalUpdateEventParentComponent'" class="btn">Global Update Event</button>
+      <button @click="activeComponent = 'PropSyncEventsParentComponent'" class="btn">Prop Sync Events</button>
+      <button @click="activeComponent = 'PropObjSyncEventsParentComponent'" class="btn">Prop object Sync Events</button>
+      <button @click="activeComponent = 'PropObjTwoWayBindSyncEventsComponent'" class="btn">Prop object Sync Events (two-way binding)</button>
+      <button @click="activeComponent = 'SharedPropTwoWayBindParentComponent'" class="btn">Shared Prop two-way binding</button>
     </div>
     <div class="">
       <component :is="activeComponent" />
@@ -11,11 +13,18 @@
 </template>
 
 <script>
-import EventsParentComponent from './parent-child/prop-event-sync/ParentComponent'
-import GlobalUpdateEventParentComponent from './parent-child/global-update-event/ParentComponent'
+import PropSyncEventsParentComponent from './parent-child/prop-sync-events/ParentComponent'
+import PropObjSyncEventsParentComponent from './parent-child/prop-obj-sync-events/ParentComponent'
+import PropObjTwoWayBindSyncEventsComponent from './parent-child/prop-obj-two-way-bind-sync-events/ParentComponent'
+import SharedPropTwoWayBindParentComponent from './parent-child/shared-prop-two-way-bind/ParentComponent'
 
 export default {
-  components: {EventsParentComponent, GlobalUpdateEventParentComponent},
+  components: {
+    PropSyncEventsParentComponent,
+    PropObjSyncEventsParentComponent,
+    PropObjTwoWayBindSyncEventsComponent,
+    SharedPropTwoWayBindParentComponent
+  },
   data() {
     return {
       activeComponent: null

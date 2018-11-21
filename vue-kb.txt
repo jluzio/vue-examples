@@ -18,9 +18,13 @@ http://es6-features.org/#Constants
 - Debugging
 https://vuejs.org/v2/cookbook/debugging-in-vscode.html
 
+-- VS Code Intellisense --
+https://code.visualstudio.com/docs/editor/intellisense
+editor.suggestSelection
+recentlyUsed -> recentlyUsedByPrefix | first
+
 -- Issues --
 - If v-for'ing without v-key, updates might not work
-
 
 - Plugins
  - Vetur (octref.vetur)

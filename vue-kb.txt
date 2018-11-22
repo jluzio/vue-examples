@@ -15,13 +15,14 @@ Javascript ES6 features
 http://es6-features.org/#Constants
 
 --- VS Code ---
-- Debugging
+> Debugging
 https://vuejs.org/v2/cookbook/debugging-in-vscode.html
-
--- VS Code Intellisense --
+> Intellisense
 https://code.visualstudio.com/docs/editor/intellisense
 editor.suggestSelection
 recentlyUsed -> recentlyUsedByPrefix | first
+> Preview Mode
+https://code.visualstudio.com/docs/getstarted/userinterface#_preview-mode
 
 -- Issues --
 - If v-for'ing without v-key, updates might not work

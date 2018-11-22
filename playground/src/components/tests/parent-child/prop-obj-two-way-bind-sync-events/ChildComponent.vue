@@ -28,7 +28,7 @@ export default {
   methods: {
     updateForm() {
       console.log(`updateForm() : formData=${this.formData}`)
-      this.$emit('update:form', this.formData)
+      this.$emit('update:form', Object.assign({}, this.formData))
     }
   }
 }

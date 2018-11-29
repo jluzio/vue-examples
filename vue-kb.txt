@@ -14,6 +14,22 @@ https://vuex.vuejs.org/
 Javascript ES6 features
 http://es6-features.org/#Constants
 
+VS Code Import with @
+https://gist.github.com/BlackMix/1c484c7bf4d70cbd15a91ebfa59a7b16
+<workspaceRoot>/jsconfig.json:
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "rootDirs": ["."]
+  },
+  "path-intellisense.mappings": {
+    "@/*": "${workspaceRoot}/src/*"
+  }
+}
+
 --- VS Code ---
 > Debugging
 https://vuejs.org/v2/cookbook/debugging-in-vscode.html

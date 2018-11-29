@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "rootDirs": ["."]
+  },
+  "path-intellisense.mappings": {
+    "@/*": "${workspaceRoot}/src/*"
+  }
+}

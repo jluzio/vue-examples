@@ -83,7 +83,7 @@
 
 <script>
 import { mapState, mapGetters, mapMutations, mapActions } from 'vuex'
-import {TestData} from '@/store/test-store'
+import { TestData } from '@/store/test-store'
 import objects from '@/utils/objects'
 // const { mapState } = createNamespacedHelpers('default')
 // const testMappers = createNamespacedHelpers('test')

@@ -36,13 +36,13 @@ Additionally, v-on event listeners inside DOM templates will be automatically tr
 For these reasons, we recommend you always use kebab-case for event names.
 */
 
-import {eventBus} from '@/services/eventBus'
-import EventTestingTarget from './EventTestingTarget'
-import EventTestingTwoWayTarget from './EventTestingTwoWayTarget'
+import { eventBus } from '@/services/event-bus'
+import EventTestingTarget from './EventTestingTarget.vue'
+import EventTestingTwoWayTarget from './EventTestingTwoWayTarget.vue'
 
 export default {
   name: 'EventTesting',
-  components: {EventTestingTarget, EventTestingTwoWayTarget},
+  components: { EventTestingTarget, EventTestingTwoWayTarget },
   data() {
     return {
       counter: 0,

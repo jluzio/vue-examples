@@ -17,7 +17,6 @@
 
 <script>
 export default {
-  name: 'BaseCard',
   props: ['cardId', 'cardHeader', 'dataParent', 'showCard'],
   computed: {
     headerId() {

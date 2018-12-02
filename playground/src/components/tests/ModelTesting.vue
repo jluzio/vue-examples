@@ -8,7 +8,6 @@
 
 <script>
 export default {
-  name: 'ModelTesting',
   props: {
     greetingText: null
   },

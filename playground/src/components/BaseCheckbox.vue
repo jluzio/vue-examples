@@ -14,7 +14,6 @@ By default, v-model on a component uses value as the prop and input as the event
 Using the model option can avoid a conflict in such cases:
 */
 export default {
-  name: 'BaseCheckbox',
   props: {
     checked: Boolean
   },

@@ -11,7 +11,7 @@ It is NOT recommended to use them in generic application code.
 */
 
 // Should be in some other file
-import DependencyInjectionTestingTarget from './DependencyInjectionTestingTarget'
+import DependencyInjectionTestingTarget from './DependencyInjectionTestingTarget.vue'
 
 class Foo {
   bar() {}

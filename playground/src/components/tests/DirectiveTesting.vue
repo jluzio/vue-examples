@@ -17,11 +17,10 @@
 
 <script>
 // imported in main.js / plugin : dup and focus
-import SquareDirective from '@/directives/square.directive'
-import AppendTestDirective from '@/directives/append-test.directive'
+import SquareDirective from '@/directives/square-directive'
+import AppendTestDirective from '@/directives/append-test-directive'
 
 export default {
-  name: 'DirectiveTesting',
   directives: {
     appendTestLocal: AppendTestDirective,
     square: SquareDirective

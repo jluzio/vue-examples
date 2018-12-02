@@ -13,10 +13,10 @@
 </template>
 
 <script>
-import PropSyncEventsParentComponent from './parent-child/prop-sync-events/ParentComponent'
-import PropObjSyncEventsParentComponent from './parent-child/prop-obj-sync-events/ParentComponent'
-import PropObjTwoWayBindSyncEventsComponent from './parent-child/prop-obj-two-way-bind-sync-events/ParentComponent'
-import SharedPropTwoWayBindParentComponent from './parent-child/shared-prop-two-way-bind/ParentComponent'
+import PropSyncEventsParentComponent from './parent-child/prop-sync-events/ParentComponent.vue'
+import PropObjSyncEventsParentComponent from './parent-child/prop-obj-sync-events/ParentComponent.vue'
+import PropObjTwoWayBindSyncEventsComponent from './parent-child/prop-obj-two-way-bind-sync-events/ParentComponent.vue'
+import SharedPropTwoWayBindParentComponent from './parent-child/shared-prop-two-way-bind/ParentComponent.vue'
 
 export default {
   components: {

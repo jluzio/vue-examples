@@ -9,7 +9,6 @@
 
 <script>
 export default {
-  name: 'Datepicker',
   props: {
     field: String
   },

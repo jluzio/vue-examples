@@ -32,18 +32,18 @@
 </template>
 
 <script>
-import SlotTestingTarget from './SlotTestingTarget'
-import TodoList from './TodoList'
+import SlotTestingTarget from './SlotTestingTarget.vue'
+import TodoList from './TodoList.vue'
 
 export default {
   name: 'SlotTesting',
-  components: {SlotTestingTarget, TodoList},
+  components: { SlotTestingTarget, TodoList },
   data() {
     return {
       todos: [
-        {text: 'todo1', isComplete: false},
-        {text: 'todo2', isComplete: true},
-        {text: 'todo3', isComplete: false}
+        { text: 'todo1', isComplete: false },
+        { text: 'todo2', isComplete: true },
+        { text: 'todo3', isComplete: false }
       ]
     }
   },

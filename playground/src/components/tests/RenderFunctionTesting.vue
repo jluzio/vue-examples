@@ -85,7 +85,6 @@ const DivWithContentComponent = {
 }
 
 export default {
-  name: 'RenderFunctionTesting',
   components: {
     'anchored-heading': AnchoredHeadingComponent,
     'jsx-anchored-heading': JsxAnchoredHeadingComponent,

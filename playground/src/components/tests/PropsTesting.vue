@@ -10,11 +10,10 @@
 </template>
 
 <script>
-import PropsTestingTarget from './PropsTestingTarget'
+import PropsTestingTarget from './PropsTestingTarget.vue'
 
 export default {
-  name: 'PropsTesting',
-  components: {PropsTestingTarget}
+  components: { PropsTestingTarget }
 }
 </script>
 

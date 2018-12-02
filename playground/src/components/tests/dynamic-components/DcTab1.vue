@@ -3,11 +3,11 @@
 </template>
 
 <script>
-import DcTab from './DcTab'
+import DcTab from './DcTab.vue'
 
 export default {
   name: 'DcTab1',
-  components: {DcTab}
+  components: { DcTab }
 }
 </script>
 

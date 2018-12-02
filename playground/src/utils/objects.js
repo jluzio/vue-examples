@@ -1,9 +1,3 @@
-import Router from 'vue-router'
-
-router.FocusDirective
-Test.prototype.test
-Test2.prototype.test
-
 class Objects {
   mergeProperties(prototype, ...sources) {
     return Object.setPrototypeOf(

@@ -13,9 +13,9 @@
 // WIP: see link below
 // https://vuejs.org/v2/guide/components-dynamic-async.html#Async-Components
 
-import LoadingComponent from './LoadingComponent'
-import ErrorComponent from './ErrorComponent'
-import EmptyComponent from './EmptyComponent'
+import LoadingComponent from './LoadingComponent.vue'
+import ErrorComponent from './ErrorComponent.vue'
+import EmptyComponent from './EmptyComponent.vue'
 
 const CustomAsyncComponent = () => ({
   // The component to load (should be a Promise)

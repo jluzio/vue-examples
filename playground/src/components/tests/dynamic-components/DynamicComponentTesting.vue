@@ -23,12 +23,11 @@
 </template>
 
 <script>
-import DcTab1 from './DcTab1'
-import DcTab2 from './DcTab2'
-import DcTab3 from './DcTab3'
+import DcTab1 from './DcTab1.vue'
+import DcTab2 from './DcTab2.vue'
+import DcTab3 from './DcTab3.vue'
 
 export default {
-  name: 'DynamicComponentTesting',
   components: {
     DcTab1,
     DcTab2,

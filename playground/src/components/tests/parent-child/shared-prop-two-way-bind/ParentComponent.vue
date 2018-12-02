@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import ChildComponent from './ChildComponent'
+import ChildComponent from './ChildComponent.vue'
 const defaultForm = {
   mail: 'parent@server.org',
   select1: [],
@@ -18,7 +18,7 @@ const watchListener = (property) => (val, oldVal) => {
 }
 
 export default {
-  components: {ChildComponent},
+  components: { ChildComponent },
   data() {
     return {
       form: defaultForm

@@ -6,7 +6,6 @@
 
 <script>
 export default {
-  name: 'DependencyInjectionTestingTarget',
   inject: ['foo'],
   props: {
     msg: String

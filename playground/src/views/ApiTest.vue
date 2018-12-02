@@ -8,7 +8,7 @@
 
 <script>
 import Vue from 'vue'
-import apiTestService from '@/services/api-test.service'
+import apiTestService from '@/services/api-test-service'
 
 const log = Vue.prototype.$log.debug
 
@@ -43,7 +43,7 @@ export default {
         })
         .catch(error => {
           vm.serviceResponse = null
-          vm.serviceMessage = 'Error: ' + e
+          vm.serviceMessage = 'Error: ' + error
         })
     }
     /*

@@ -9,7 +9,6 @@ import objects from '@/utils/objects'
 // validation see: https://vuejs.org/v2/guide/components-props.html#Prop-Validation
 
 export default {
-  name: 'PropsTestingTarget',
   props: {
     stringProp: String,
     numberProp: Number,

@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import mutationTypes from './mutation-types'
 import router from '../router'
-import loginService from '../services/login.service'
+import loginService from '../services/login-service'
 import objects from '@/utils/objects'
 
 const log = Vue.prototype.$debug('authLog')

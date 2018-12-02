@@ -1,6 +1,6 @@
-import AppendTestDirective from '@/directives/append-test.directive'
-import DupDirective from '@/directives/dup.directive'
-import FocusDirective from '@/directives/focus.directive'
+import AppendTestDirective from '@/directives/append-test-directive'
+import DupDirective from '@/directives/dup-directive'
+import FocusDirective from '@/directives/focus-directive'
 
 import Vue from 'vue'
 

@@ -4,7 +4,6 @@ p<template>
 
 <script>
 export default {
-  name: 'AsyncLoadedComponent'
 }
 </script>
 

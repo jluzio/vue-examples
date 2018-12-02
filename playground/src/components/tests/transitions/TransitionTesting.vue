@@ -31,7 +31,6 @@
 // https://vuejs.org/v2/guide/transitions.html
 
 export default {
-  name: 'TransitionTesting',
   data() {
     return {
       transition: 'fade',

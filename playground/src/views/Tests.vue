@@ -76,7 +76,7 @@
         <parent-child-testing/>
       </base-tab>
       <base-tab tabId="ecma-script">
-        <parent-child-testing/>
+        <ecma-script-testing />
       </base-tab>
     </div>
   </div>
@@ -84,25 +84,25 @@
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld'
-import Datepicker from '@/components/Datepicker'
-import DependencyInjectionTesting from '@/components/tests/DependencyInjectionTesting'
-import DirectiveTesting from '@/components/tests/DirectiveTesting'
-import ModelTesting from '@/components/tests/ModelTesting'
-import EventTesting from '@/components/tests/events/EventTesting'
-import DynamicComponentTesting from '@/components/tests/dynamic-components/DynamicComponentTesting'
-import AsyncComponentTesting from '@/components/tests/async-components/AsyncComponentTesting'
-import PropsTesting from '@/components/tests/PropsTesting'
-import MixinTesting from '@/components/tests/MixinTesting'
-import SlotTesting from '@/components/tests/slots/SlotTesting'
-import TransitionTesting from '@/components/tests/transitions/TransitionTesting'
-import CssTesting from '@/components/tests/CssTesting'
-import RenderFunctionTesting from '@/components/tests/RenderFunctionTesting'
-import FilterTesting from '@/components/tests/FilterTesting'
-import StoreTesting from '@/components/tests/StoreTesting'
-import BootstrapTesting from '@/components/tests/BootstrapTesting'
-import ParentChildTesting from '@/components/tests/ParentChildTesting'
-import EcmaScriptTesting from '@/components/tests/EcmaScriptTesting'
+import HelloWorld from '@/components/HelloWorld.vue'
+import Datepicker from '@/components/Datepicker.vue'
+import DependencyInjectionTesting from '@/components/tests/DependencyInjectionTesting.vue'
+import DirectiveTesting from '@/components/tests/DirectiveTesting.vue'
+import ModelTesting from '@/components/tests/ModelTesting.vue'
+import EventTesting from '@/components/tests/events/EventTesting.vue'
+import DynamicComponentTesting from '@/components/tests/dynamic-components/DynamicComponentTesting.vue'
+import AsyncComponentTesting from '@/components/tests/async-components/AsyncComponentTesting.vue'
+import PropsTesting from '@/components/tests/PropsTesting.vue'
+import MixinTesting from '@/components/tests/MixinTesting.vue'
+import SlotTesting from '@/components/tests/slots/SlotTesting.vue'
+import TransitionTesting from '@/components/tests/transitions/TransitionTesting.vue'
+import CssTesting from '@/components/tests/CssTesting.vue'
+import RenderFunctionTesting from '@/components/tests/RenderFunctionTesting.vue'
+import FilterTesting from '@/components/tests/FilterTesting.vue'
+import StoreTesting from '@/components/tests/StoreTesting.vue'
+import BootstrapTesting from '@/components/tests/BootstrapTesting.vue'
+import ParentChildTesting from '@/components/tests/ParentChildTesting.vue'
+import EcmaScriptTesting from '@/components/tests/EcmaScriptTesting.vue'
 
 // Note: components in @/components with Base prefix get automatically loaded due to global-components.js
 

@@ -20,6 +20,7 @@
       <base-tab-link tabId="filter" />
       <base-tab-link tabId="store" />
       <base-tab-link tabId="parent-child" />
+      <base-tab-link tabId="ecma-script" />
     </ul>
     <div class="pt-3"></div>
     <div class="tab-content" id="myTabContent">
@@ -74,6 +75,9 @@
       <base-tab tabId="parent-child">
         <parent-child-testing/>
       </base-tab>
+      <base-tab tabId="ecma-script">
+        <parent-child-testing/>
+      </base-tab>
     </div>
   </div>
 </template>
@@ -98,6 +102,7 @@ import FilterTesting from '@/components/tests/FilterTesting'
 import StoreTesting from '@/components/tests/StoreTesting'
 import BootstrapTesting from '@/components/tests/BootstrapTesting'
 import ParentChildTesting from '@/components/tests/ParentChildTesting'
+import EcmaScriptTesting from '@/components/tests/EcmaScriptTesting'
 
 // Note: components in @/components with Base prefix get automatically loaded due to global-components.js
 
@@ -121,7 +126,8 @@ export default {
     FilterTesting,
     StoreTesting,
     BootstrapTesting,
-    ParentChildTesting
+    ParentChildTesting,
+    EcmaScriptTesting
   }
 }
 </script>

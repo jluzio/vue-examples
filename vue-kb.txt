@@ -17,8 +17,19 @@ http://es6-features.org/#Constants
 VS Code Import with @
 https://gist.github.com/BlackMix/1c484c7bf4d70cbd15a91ebfa59a7b16
 <workspaceRoot>/jsconfig.json:
+
+Problems with imports:
+ - not configuring a jsconfig.json makes "@/" imports not recignized by VS Code IntelliSense
+ - not including "target" makes lib.d.ts use the lowest version
+ - including "target" other than es2015 makes node_modules libs to not get recognized by VS Code IntelliSense
+ - "module": "commonjs" -> is supposed to be "old" but it's the only one that works with "target"
+
+Current working jsconfig.json:
+
 {
   "compilerOptions": {
+    "target": "es2017",
+    "module": "commonjs",
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
@@ -27,7 +38,8 @@ https://gist.github.com/BlackMix/1c484c7bf4d70cbd15a91ebfa59a7b16
   },
   "path-intellisense.mappings": {
     "@/*": "${workspaceRoot}/src/*"
-  }
+  },
+  "exclude": ["node_modules"]
 }
 
 --- VS Code ---

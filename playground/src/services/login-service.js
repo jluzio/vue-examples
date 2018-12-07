@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import ServiceResponse from './service-response'
+import BaseService from './base-service'
 
 const serviceLog = Vue.prototype.$debug('serviceLog')
 const debugLog = Vue.prototype.$log.debug
@@ -12,13 +13,12 @@ class LoginResponse extends ServiceResponse {
   }
 }
 
-class LoginService {
+export default class LoginService extends BaseService {
   apiUrl = 'http://localhost:9080/DutyTravelWAR/api/auth/login'
-  axios = Vue.prototype.$axios
 
   callLogin(credentials) {
     debugLog('callLogin')
-    return this.axios.post(this.apiUrl, credentials)
+    return this.appCfg.axios.post(this.apiUrl, credentials)
   }
 
   login(credentials) {
@@ -37,7 +37,3 @@ class LoginService {
       })
   }
 }
-
-const loginService = new LoginService()
-
-export default loginService

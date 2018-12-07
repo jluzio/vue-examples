@@ -8,7 +8,7 @@ const Category = {
   ERROR: 'app:error'
 }
 
-class Logger {
+export class Logger {
   constructor(debug) {
     this.debugInstance = debug
   }

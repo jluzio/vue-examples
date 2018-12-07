@@ -21,6 +21,7 @@
       <base-tab-link tabId="store" />
       <base-tab-link tabId="parent-child" />
       <base-tab-link tabId="ecma-script" />
+      <base-tab-link tabId="delayed-update-input" />
     </ul>
     <div class="pt-3"></div>
     <div class="tab-content" id="myTabContent">
@@ -78,13 +79,15 @@
       <base-tab tabId="ecma-script">
         <ecma-script-testing />
       </base-tab>
+      <base-tab tabId="delayed-update-input">
+        <delayed-update-input-testing />
+      </base-tab>
     </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
 import Datepicker from '@/components/Datepicker.vue'
 import DependencyInjectionTesting from '@/components/tests/DependencyInjectionTesting.vue'
 import DirectiveTesting from '@/components/tests/DirectiveTesting.vue'
@@ -103,13 +106,13 @@ import StoreTesting from '@/components/tests/StoreTesting.vue'
 import BootstrapTesting from '@/components/tests/BootstrapTesting.vue'
 import ParentChildTesting from '@/components/tests/ParentChildTesting.vue'
 import EcmaScriptTesting from '@/components/tests/EcmaScriptTesting.vue'
+import DelayedUpdateInputTesting from '@/components/tests/DelayedUpdateInputTesting.vue'
 
 // Note: components in @/components with Base prefix get automatically loaded due to global-components.js
 
 export default {
   name: 'home',
   components: {
-    HelloWorld,
     Datepicker,
     DependencyInjectionTesting,
     DirectiveTesting,
@@ -127,7 +130,8 @@ export default {
     StoreTesting,
     BootstrapTesting,
     ParentChildTesting,
-    EcmaScriptTesting
+    EcmaScriptTesting,
+    DelayedUpdateInputTesting
   }
 }
 </script>

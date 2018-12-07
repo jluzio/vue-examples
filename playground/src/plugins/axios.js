@@ -1,7 +1,7 @@
-'use strict';
+'use strict'
 
 import Vue from 'vue'
-import axios from 'axios';
+import axios from 'axios'
 
 // Full config:  https://github.com/axios/axios#request-config
 // axios.defaults.baseURL = process.env.baseURL || process.env.apiUrl || '';
@@ -54,7 +54,7 @@ Plugin.install = function(Vue, options) {
       }
     }
   })
-};
+}
 
 Vue.use(Plugin)
 

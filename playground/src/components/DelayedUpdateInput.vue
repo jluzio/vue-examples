@@ -1,16 +1,14 @@
 <template>
-  <input :type="type" :value="value" class="form-control" :id="id" :placeholder="placeholder"
+  <input :type="type" :value="value" class="form-control"
     @input="handleTimedUpdate($event)" @blur="handleImmediateUpdate($event)" x />
 </template>
 
 <script>
 export default {
   props: {
-    id: { String, default: null },
     type: { String, default: 'text' },
     value: { String, default: null },
-    timeout: { Number, default: 2000 },
-    placeholder: { String, default: null }
+    timeout: { Number, default: 2000 }
   },
   data() {
     return {

@@ -1,6 +1,6 @@
 <template>
   <input :type="type" :value="value" class="form-control" :id="id" :placeholder="placeholder"
-    @input="handleInput($event)" @blur="handleBlur($event)" x />
+    @input="handleTimedUpdate($event)" @blur="handleImmediateUpdate($event)" x />
 </template>
 
 <script>
@@ -20,20 +20,25 @@ export default {
     }
   },
   methods: {
-    handleInput(event) {
+    handleTimedUpdate(event) {
       const value = event.target.value
-      if (this.updateTimer) {
-        clearTimeout(this.updateTimer)
-      }
+      this.clearTimer()
       $appCfg.log.debug(`updating value=${value} in ${this.timeout}ms`)
       this.updateTimer = setTimeout(() => this.updateValue(value), this.timeout)
     },
-    handleBlur(event) {
+    handleImmediateUpdate(event) {
       const value = event.target.value
       this.updateValue(value)
     },
+    clearTimer() {
+      if (this.updateTimer) {
+        clearTimeout(this.updateTimer)
+        this.updateTimer = null
+      }
+    },
     updateValue(value) {
       $appCfg.log.debug(`update:value :: ${value}`)
+      this.clearTimer()
       this.$emit('update:value', value)
     }
   }

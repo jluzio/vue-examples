@@ -6,9 +6,9 @@
 <script>
 export default {
   props: {
-    type: { String, default: 'text' },
-    value: { String, default: null },
-    timeout: { Number, default: 2000 }
+    type: { type: String, default: 'text' },
+    value: { type: String, default: null },
+    timeout: { type: Number, default: 2000 }
   },
   data() {
     return {

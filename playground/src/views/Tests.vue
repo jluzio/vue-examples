@@ -19,7 +19,8 @@
       <base-tab-link tabId="render-function" />
       <base-tab-link tabId="filter" />
       <base-tab-link tabId="store" />
-      <base-tab-link tabId="parent-child" />
+      <base-tab-link tabId="parent-child-data" />
+      <base-tab-link tabId="parent-child-event" />
       <base-tab-link tabId="ecma-script" />
       <base-tab-link tabId="delayed-update-input" />
     </ul>
@@ -73,8 +74,11 @@
       <base-tab tabId="bootstrap">
         <bootstrap-testing/>
       </base-tab>
-      <base-tab tabId="parent-child">
-        <parent-child-testing/>
+      <base-tab tabId="parent-child-data">
+        <parent-child-data-testing/>
+      </base-tab>
+      <base-tab tabId="parent-child-event">
+        <parent-child-event-testing/>
       </base-tab>
       <base-tab tabId="ecma-script">
         <ecma-script-testing />
@@ -104,7 +108,8 @@ import RenderFunctionTesting from '@/components/tests/RenderFunctionTesting.vue'
 import FilterTesting from '@/components/tests/FilterTesting.vue'
 import StoreTesting from '@/components/tests/StoreTesting.vue'
 import BootstrapTesting from '@/components/tests/BootstrapTesting.vue'
-import ParentChildTesting from '@/components/tests/ParentChildTesting.vue'
+import ParentChildDataTesting from '@/components/tests/ParentChildDataTesting.vue'
+import ParentChildEventTesting from '@/components/tests/ParentChildEventTesting.vue'
 import EcmaScriptTesting from '@/components/tests/EcmaScriptTesting.vue'
 import DelayedUpdateInputTesting from '@/components/tests/DelayedUpdateInputTesting.vue'
 
@@ -129,7 +134,8 @@ export default {
     FilterTesting,
     StoreTesting,
     BootstrapTesting,
-    ParentChildTesting,
+    ParentChildDataTesting,
+    ParentChildEventTesting,
     EcmaScriptTesting,
     DelayedUpdateInputTesting
   }

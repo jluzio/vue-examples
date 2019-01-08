@@ -18,7 +18,7 @@ export default class LoginService extends BaseService {
 
   callLogin(credentials) {
     debugLog('callLogin')
-    return this.appCfg.axios.post(this.apiUrl, credentials)
+    return this.appCfg.lib.axios.post(this.apiUrl, credentials)
   }
 
   login(credentials) {

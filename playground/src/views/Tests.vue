@@ -23,6 +23,7 @@
       <base-tab-link tabId="parent-child-event" />
       <base-tab-link tabId="ecma-script" />
       <base-tab-link tabId="delayed-update-input" />
+      <base-tab-link tabId="watcher" />
     </ul>
     <div class="pt-3"></div>
     <div class="tab-content" id="myTabContent">
@@ -86,6 +87,9 @@
       <base-tab tabId="delayed-update-input">
         <delayed-update-input-testing />
       </base-tab>
+      <base-tab tabId="watcher">
+        <watcher-testing />
+      </base-tab>
     </div>
   </div>
 </template>
@@ -112,6 +116,7 @@ import ParentChildDataTesting from '@/components/tests/ParentChildDataTesting.vu
 import ParentChildEventTesting from '@/components/tests/ParentChildEventTesting.vue'
 import EcmaScriptTesting from '@/components/tests/EcmaScriptTesting.vue'
 import DelayedUpdateInputTesting from '@/components/tests/DelayedUpdateInputTesting.vue'
+import WatcherTesting from '@/components/tests/WatcherTesting.vue'
 
 // Note: components in @/components with Base prefix get automatically loaded due to global-components.js
 
@@ -137,7 +142,8 @@ export default {
     ParentChildDataTesting,
     ParentChildEventTesting,
     EcmaScriptTesting,
-    DelayedUpdateInputTesting
+    DelayedUpdateInputTesting,
+    WatcherTesting
   }
 }
 </script>

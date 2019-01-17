@@ -45,6 +45,59 @@ Current working jsconfig.json:
 --- VS Code ---
 > Debugging
 https://vuejs.org/v2/cookbook/debugging-in-vscode.html
+https://github.com/Microsoft/vscode-recipes/blob/master/vuejs-cli/README.md
+Also: 
+ - in code: debugger
+ This js instruction forces the debugger to act
+
+Changes to doc:
+- Add "webpack:///src/*" AND "webpack:///./src/*" in launch.json
+      "sourceMapPathOverrides": {
+        "webpack:///src/*": "${webRoot}/*",
+        "webpack:///./src/*": "${webRoot}/*"
+      }      
+
+
+-- launch.json --
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [    
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "vuejs: chrome",
+      "url": "http://localhost:4000",
+      "webRoot": "${workspaceFollder}/src",
+      "breakOnLoad": true,
+      "sourceMapPathOverrides": {
+        "webpack:///src/*": "${webRoot}/*",
+        "webpack:///./src/*": "${webRoot}/*"
+      }      
+    }
+  ]
+}
+-- vue.config.js --
+// vue.config.js
+module.exports = {
+  baseUrl: process.env.VUE_APP_APP_PATH,
+  // ...
+  devServer: {
+    // open: process.platform === 'darwin',
+    // host: '0.0.0.0',
+    port: 4000 // CHANGE YOUR PORT HERE!
+    // https: false,
+    // hotOnly: false,
+  },
+  configureWebpack: {
+    devtool: 'source-map'
+  }
+  // ...
+}
+
+
 > Intellisense
 https://code.visualstudio.com/docs/editor/intellisense
 editor.suggestSelection

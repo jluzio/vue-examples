@@ -97,13 +97,36 @@ module.exports = {
   // ...
 }
 
-
 > Intellisense
 https://code.visualstudio.com/docs/editor/intellisense
 editor.suggestSelection
 recentlyUsed -> recentlyUsedByPrefix | first
 > Preview Mode
 https://code.visualstudio.com/docs/getstarted/userinterface#_preview-mode
+
+> VS Code workspace settings
+-- settings.json --
+{
+    "editor.tabSize": 2,
+    "vetur.format.defaultFormatter.js": "vscode-typescript",
+    "eslint.autoFixOnSave": true,
+    "eslint.enable": true,
+    "eslint.validate": [
+      {
+        "language": "vue",
+        "autoFix": true
+      },
+      {
+        "language": "html",
+        "autoFix": true
+      },
+      {
+        "language": "javascript",
+        "autoFix": true
+      }
+    ]
+}
+
 
 -- Issues --
 - If v-for'ing without v-key, updates might not work

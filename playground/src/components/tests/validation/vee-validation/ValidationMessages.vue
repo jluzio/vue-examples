@@ -1,22 +1,19 @@
 <template>
-  <span class="error" v-show="errors.has(name)">{{ errors.first(name) }}</span>
+  <div>
+    <ul>
+      <li v-for="(error,index) of validationErrors" :key="index" class="error">
+        {{ error.replace('{field}', name) }}
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
 export default {
   props: {
-    name: { type: String, default: null }
-  },
-  updated() {
-    const name = this.name
-    // const name = 'text2'
-    console.log('valMsgs: updated', {
-      name: name,
-      has: this.errors.has(name), 
-      first: this.errors.first(name), 
-      collect: this.errors.collect(name),
-      errors: this.errors
-    })
+    validationErrors: null,
+    name: { type: String, default: null },
+    scope: { type: String, default: null }
   }
 }
 </script>

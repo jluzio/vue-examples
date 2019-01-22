@@ -8,8 +8,8 @@
 export default {
   name: 'BaseTab',
   props: {
-    tabId: {String, required: true},
-    active: {Boolean, default: false}
+    tabId: { type: String, required: true },
+    active: { type: Boolean, default: false }
   }
 }
 </script>

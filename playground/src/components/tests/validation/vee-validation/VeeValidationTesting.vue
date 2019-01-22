@@ -21,17 +21,29 @@
               <simple-field :value.sync="email" validate="required|email" name="email" />
             </div>
             <div class="form-group">
-              <ValidationProvider rules="required|min:2">
+              <ValidationProvider rules="required|min:5">
                 <div slot-scope="{ errors }">
-                  <label>text2</label>
-                  <input v-model="text2" name="text2"
+                  <label>provider::text1</label>
+                  <input v-model="text1" name="text1"
                     type="text" class="form-control">
                   <span id="error">{{ errors[0] }}</span>
-                  <validation-messages :validation-errors="errors" name="text2" />
+                  <validation-messages source="provider" :messages="errors" name="text1" />
                 </div>
               </ValidationProvider>
             </div>
             <div class="form-group">
+              <label>default::text2</label>
+              <input v-model="text2" name="text2" v-validate="'required|min:3'"
+                type="text" class="form-control">
+              <validation-messages :messages="errors" name="text2" />
+            </div>
+            <div class="form-group">
+              <label>default::text3</label>
+              <input v-model="text3" name="text3" v-validate="'required|min:3'"
+                type="text" class="form-control">
+              <validation-messages name="text3" />
+            </div>
+            <div class="form-group" v-if="false">
               TODO: fix this
               <field-validation rules="required|min:3">
                 <slot name="input">

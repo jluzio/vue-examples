@@ -1,21 +1,11 @@
 <template>
-  <div>
-    <input v-model="message" placeholder="edit me">
-    <p>Message is: {{ message }}</p>
-    <p>GreetingText is: {{ greetingText }}</p>
-  </div>
+  <model-testing-target greeting-text="testy" />
 </template>
 
 <script>
+import ModelTestingTarget from './ModelTestingTarget.vue'
 export default {
-  props: {
-    greetingText: null
-  },
-  data() {
-    return {
-      message: null
-    }
-  }
+  components: { ModelTestingTarget }
 }
 </script>
 

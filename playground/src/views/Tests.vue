@@ -3,104 +3,23 @@
     <img alt="Vue logo" src="../assets/logo.png">
 
     <ul class="nav nav-tabs" id="myTab" role="tablist">
-      <base-tab-link tabId="props" />
-      <base-tab-link tabId="model" />
-      <base-tab-link tabId="css" />
-      <base-tab-link tabId="bootstrap" />
-      <base-tab-link tabId="event" />
-      <base-tab-link tabId="directive" />
-      <base-tab-link tabId="datepicker" />
-      <base-tab-link tabId="slot" />
-      <base-tab-link tabId="dynamic-component" />
-      <base-tab-link tabId="async-component" />
-      <base-tab-link tabId="transition" />
-      <base-tab-link tabId="dependency-injection" />
-      <base-tab-link tabId="mixin" />
-      <base-tab-link tabId="render-function" />
-      <base-tab-link tabId="filter" />
-      <base-tab-link tabId="store" />
-      <base-tab-link tabId="parent-child-data" />
-      <base-tab-link tabId="parent-child-event" />
-      <base-tab-link tabId="ecma-script" />
-      <base-tab-link tabId="delayed-update-input" />
-      <base-tab-link tabId="watcher" />
-      <base-tab-link tabId="validation" />
+      <test-tab-link v-for="component of testComponentNames" :key="component"
+        :tabId="component" :tab-name-fn="getTabName" :active="activeComponent === component"
+        @click="handleSelectedTab" />
     </ul>
     <div class="pt-3"></div>
     <div class="tab-content" id="myTabContent">
-      <base-tab tabId="datepicker">
-        <datepicker field="Date" />
-      </base-tab>
-      <base-tab tabId="dependency-injection">
-        <dependency-injection-testing />
-      </base-tab>
-      <base-tab tabId="directive">
-        <directive-testing />
-      </base-tab>
-      <base-tab tabId="model">
-        <model-testing greeting-text="testy" />
-      </base-tab>
-      <base-tab tabId="event">
-        <event-testing />
-      </base-tab>
-      <base-tab tabId="dynamic-component">
-        <dynamic-component-testing />
-      </base-tab>
-      <base-tab tabId="async-component">
-        <async-component-testing />
-      </base-tab>
-      <base-tab tabId="props">
-        <props-testing/>
-      </base-tab>
-      <base-tab tabId="mixin">
-        <mixin-testing/>
-      </base-tab>
-      <base-tab tabId="slot">
-        <slot-testing/>
-      </base-tab>
-      <base-tab tabId="transition">
-        <transition-testing/>
-      </base-tab>
-      <base-tab tabId="css">
-        <css-testing/>
-      </base-tab>
-      <base-tab tabId="render-function">
-        <render-function-testing/>
-      </base-tab>
-      <base-tab tabId="filter">
-        <filter-testing/>
-      </base-tab>
-      <base-tab tabId="store">
-        <store-testing/>
-      </base-tab>
-      <base-tab tabId="bootstrap">
-        <bootstrap-testing/>
-      </base-tab>
-      <base-tab tabId="parent-child-data">
-        <parent-child-data-testing/>
-      </base-tab>
-      <base-tab tabId="parent-child-event">
-        <parent-child-event-testing/>
-      </base-tab>
-      <base-tab tabId="ecma-script">
-        <ecma-script-testing />
-      </base-tab>
-      <base-tab tabId="delayed-update-input">
-        <delayed-update-input-testing />
-      </base-tab>
-      <base-tab tabId="watcher">
-        <watcher-testing />
-      </base-tab>
-      <base-tab tabId="validation">
-        <validation-testing />
-      </base-tab>
+      <div role="tabpanel" :class="{'tab-pane': true, 'fade': true, 'show': true, 'active': true}">
+        <component :is="activeComponent" />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Datepicker from '@/components/Datepicker.vue'
+import TestTabLink from '@/components/tests/TestTabLink.vue'
+import DatepickerTesting from '@/components/tests/DatepickerTesting.vue'
 import DependencyInjectionTesting from '@/components/tests/DependencyInjectionTesting.vue'
 import DirectiveTesting from '@/components/tests/DirectiveTesting.vue'
 import ModelTesting from '@/components/tests/ModelTesting.vue'
@@ -124,32 +43,55 @@ import WatcherTesting from '@/components/tests/WatcherTesting.vue'
 import ValidationTesting from '@/components/tests/ValidationTesting.vue'
 
 // Note: components in @/components with Base prefix get automatically loaded due to global-components.js
+const TEST_COMPONENTS = {
+  DatepickerTesting,
+  DependencyInjectionTesting,
+  DirectiveTesting,
+  ModelTesting,
+  EventTesting,
+  DynamicComponentTesting,
+  AsyncComponentTesting,
+  PropsTesting,
+  MixinTesting,
+  SlotTesting,
+  TransitionTesting,
+  CssTesting,
+  RenderFunctionTesting,
+  FilterTesting,
+  StoreTesting,
+  BootstrapTesting,
+  ParentChildDataTesting,
+  ParentChildEventTesting,
+  EcmaScriptTesting,
+  DelayedUpdateInputTesting,
+  WatcherTesting,
+  ValidationTesting
+}
 
 export default {
-  name: 'home',
-  components: {
-    Datepicker,
-    DependencyInjectionTesting,
-    DirectiveTesting,
-    ModelTesting,
-    EventTesting,
-    DynamicComponentTesting,
-    AsyncComponentTesting,
-    PropsTesting,
-    MixinTesting,
-    SlotTesting,
-    TransitionTesting,
-    CssTesting,
-    RenderFunctionTesting,
-    FilterTesting,
-    StoreTesting,
-    BootstrapTesting,
-    ParentChildDataTesting,
-    ParentChildEventTesting,
-    EcmaScriptTesting,
-    DelayedUpdateInputTesting,
-    WatcherTesting,
-    ValidationTesting
+  components: Object.assign(
+    {},
+    { TestTabLink },
+    TEST_COMPONENTS
+  ),
+  data() {
+    return {
+      activeComponent: 'ValidationTesting',
+      testComponents: TEST_COMPONENTS
+    }
+  },
+  computed: {
+    testComponentNames() {
+      return Object.keys(this.testComponents)
+    }
+  },
+  methods: {
+    getTabName(tabId) {
+      return tabId.replace('Testing', '')
+    },
+    handleSelectedTab(tabId) {
+      this.activeComponent = tabId
+    }
   }
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ul>
+    <ul v-if="resolvedMessages">
       <li v-for="(message,index) of resolvedMessages" :key="index" :class="messageClasses">
         {{ message }}
       </li>
@@ -24,10 +24,10 @@ const valEq = (s1, s2) => s1.toLowerCase() === s2.toLowerCase()
 export default {
   inject: ['$validator'],
   props: {
-    messages: null,
     source: { type: String, default: DEFAULT_VALUE },
     filter: { type: String, default: DEFAULT_VALUE },
     name: { type: String, default: null },
+    messages: null,
     messageClasses: { default: 'error' }
   },
   computed: {
@@ -37,9 +37,12 @@ export default {
         if (valEq(this.resolvedFilter, Filters.All)) {
           resolved = this.errors.all()
         } else if (valEq(this.resolvedFilter, Filters.First)) {
-          resolved = this.errors.first(name)
+          resolved = []
+          if (this.errors.has(this.name)) {
+            resolved.push(this.errors.first(this.name))
+          }
         } else if (valEq(this.resolvedFilter, Filters.Collect)) {
-          resolved = this.errors.collect(name)
+          resolved = this.errors.collect(this.name)
         }
       } else if (valEq(this.resolvedSource, Sources.Provider)) {
         if (valEq(this.resolvedFilter, Filters.All)) {

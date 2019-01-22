@@ -1,12 +1,11 @@
 <template>
   <validation-provider :rules="rules">
-    <slot>
-      <div slot-scope="{ errors }">
-        <label>{{name}}</label>
-        <slot name="input" />
-        <validation-messages :validation-errors="errors" :name="name" />
-      </div>
-    </slot>
+    <div slot-scope="{ errors }">
+      <label>{{name}}</label>
+      <slot name="input" />
+      errors: {{errors}}
+      <validation-messages source="provider" :name="name" :messages="errors" />
+    </div>
   </validation-provider>
 </template>
 
@@ -22,7 +21,6 @@ export default {
   props: {
     name: { type: String, default: null },
     label: { type: String, default: null },
-    validationScope: { type: String, default: null },
     rules: { type: String, default: null }
   }
 }

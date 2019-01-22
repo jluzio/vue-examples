@@ -2,61 +2,64 @@
   <div class="test">
     <ul class="list-group">
       <li class="list-group-item">
-        <form :data-vv-scope="validationScope">
+        <form>
           <div class="notes">
-            alternative field name for validation: data-vv-name
+            | alternative field name for validation: data-vv-name
+            | validationScope: data-vv-scope="_val_"
           </div>
-          <template>
-            <div class="form-group">
+          <div class="row">
+            <div class="col form-group">
               <label>fieldName</label>
-              <input name="fieldName" v-validate="'required'"
+              <input name="fieldName" v-validate="'required|alpha|min:3'"
                 type="text" class="form-control">
-              <span class="error" v-show="errors.has('fieldName', validationScope)">{{ errors.first('fieldName', validationScope) }}</span>
+              <span class="error" v-show="errors.has('fieldName')">{{ errors.first('fieldName') }}</span>
             </div>
-            <div class="form-group">
-              <simple-field :value.sync="text1" validate="required" name="text1" label="text1.name" />
-              <simple-field :value.sync="text1" validate="required" data-vv-name="text1" label="text1.name" />
+            <div class="col form-group">
+              <label>fieldName2</label>
+              <input name="fieldName2" v-validate.continues="'required|alpha|min:3'"
+                type="text" class="form-control">
+              <span class="error" v-show="errors.has('fieldName2')">{{ errors.collect('fieldName2') }}</span>
             </div>
-            <div class="form-group">
+            <div class="form-group col">
               <simple-field :value.sync="email" validate="required|email" name="email" />
             </div>
-            <div class="form-group">
-              <ValidationProvider rules="required|min:5">
+          </div>
+          <div class="row">
+            <div class="col form-group">
+              <label>default::text1</label>
+              <input v-model="text1" name="text1" v-validate="'required|alpha|min:3'"
+                type="text" class="form-control">
+              <validation-messages name="text1" />
+            </div>
+            <div class="col form-group">
+              <label>default::text2</label>
+              <input v-model="text2" name="text2" v-validate.continues="'required|alpha|min:3'"
+                type="text" class="form-control">
+              <validation-messages name="text2" filter="collect" />
+            </div>
+            <div class="col form-group">
+              <ValidationProvider rules="required|alpha|min:3">
                 <div slot-scope="{ errors }">
-                  <label>provider::text1</label>
-                  <input v-model="text1" name="text1"
+                  <label>provider::text3</label>
+                  <input v-model="text3" name="text3"
                     type="text" class="form-control">
-                  <span id="error">{{ errors[0] }}</span>
-                  <validation-messages source="provider" :messages="errors" name="text1" />
+                  <span id="error" v-if="false">{{ errors[0] }}</span>
+                  <validation-messages source="provider" :messages="errors" name="text3" />
                 </div>
               </ValidationProvider>
             </div>
-            <div class="form-group">
-              <label>default::text2</label>
-              <input v-model="text2" name="text2" v-validate="'required|min:3'"
-                type="text" class="form-control">
-              <validation-messages :messages="errors" name="text2" />
-            </div>
-            <div class="form-group">
-              <label>default::text3</label>
-              <input v-model="text3" name="text3" v-validate="'required|min:3'"
-                type="text" class="form-control">
-              <validation-messages name="text3" />
-            </div>
-            <div class="form-group" v-if="false">
-              TODO: fix this
-              <field-validation rules="required|min:3">
-                <slot name="input">
-                  <input v-model="text3" name="text3"
-                    type="text" class="form-control">
-                </slot>
+          </div>
+          <div class="row">
+            <div class="col form-group" v-if="false">
+              <field-validation name="fieldName3" rules="required|alpha|min:3">
+                <input slot="input" name="fieldName3" type="text" class="form-control">
               </field-validation>
+              <div>
+                Note: Currently was not able to get it working with slots :(
+              </div>
             </div>
-          </template>
+          </div>
         </form>
-      </li>
-      <li class="list-group-item">
-        Errors: {{ errors }}
       </li>
       <li class="list-group-item">
         <ul class="list-group">
@@ -64,6 +67,9 @@
             Error: {{ error }}
           </li>
         </ul>
+      </li>
+      <li class="list-group-item">
+        Errors: {{ errors }}
       </li>
     </ul>
   </div>

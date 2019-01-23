@@ -1,8 +1,8 @@
 <template>
   <div>
     <div>
-      <button class="btn" @click="activeComponent = 'VeeValidationTesting'">VeeValidation</button>
-      <button class="btn" @click="activeComponent = 'VeeValidationProviderTesting'">VeeValidationProvider</button>
+      <button class="btn" @click="activeComponent = 'VeeValidateTesting'">VeeValidate</button>
+      <button class="btn" @click="activeComponent = 'VeeValidateProviderTesting'">VeeValidateProvider</button>
       <button class="btn" @click="activeComponent = 'VuelidateTesting'">Vuelidate</button>
     </div>
     <component :is="activeComponent" />
@@ -11,18 +11,18 @@
 
 <script>
 import VuelidateTesting from './validation/vuelidate/VuelidateTesting.vue'
-import VeeValidationTesting from './validation/vee-validation/VeeValidationTesting.vue'
-import VeeValidationProviderTesting from './validation/vee-validation/VeeValidationProviderTesting.vue'
+import VeeValidateTesting from './validation/vee-validation/VeeValidateTesting.vue'
+import VeeValidateProviderTesting from './validation/vee-validation/VeeValidateProviderTesting.vue'
 
 export default {
   components: {
-    VeeValidationTesting,
-    VeeValidationProviderTesting,
+    VeeValidateTesting,
+    VeeValidateProviderTesting,
     VuelidateTesting
   },
   data() {
     return {
-      activeComponent: 'VeeValidationTesting'
+      activeComponent: 'VeeValidateTesting'
     }
   }
 }

@@ -8,6 +8,7 @@ import { Logger } from '@/plugins/debug'
 import { ServiceFactory } from '@/services/service-factory'
 import objects from '@/utils/objects'
 import { Formats, formatters } from '@/utils/format'
+import validations from '@/utils/validations'
 import { Toasted } from 'vue-toasted'
 
 export class Libraries {
@@ -24,15 +25,10 @@ export class Libraries {
 }
 
 export class Utils {
-  get objects() {
-    return objects
-  }
-  get Formats() {
-    return Formats
-  }
-  get formatters() {
-    return formatters
-  }
+  objects = objects
+  Formats = Formats
+  formatters = formatters
+  validations = validations
 }
 
 export default class AppConfig {

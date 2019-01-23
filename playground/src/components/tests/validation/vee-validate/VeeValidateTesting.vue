@@ -147,12 +147,20 @@ export default {
       }
       Validator.localize(locale, localesMap[locale])
     },
+    'fields.delayedValField.pending': $appCfg.utils.validations.getPendingValidationHandler('delayedValField', 'handleValidation')
+    /*
     'fields.delayedValField.pending'(value) {
       const field = this.fields.delayedValField
       console.log('field', JSON.stringify(field))
       if (field.dirty && !field.pending && field.valid) {
         $appCfg.libs.toasted.show('validated delayedValField', { position: 'top-center', duration: 2000 })
       }
+    }
+    */
+  },
+  methods: {
+    handleValidation() {
+      $appCfg.libs.toasted.show('validated delayedValField', { position: 'top-center', duration: 2000 })
     }
   }
 }

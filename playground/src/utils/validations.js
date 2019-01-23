@@ -41,6 +41,22 @@ class Validations {
   replaceTokenFieldName(messages, replaceValue) {
     return messages.map(m => m.replace('{field}', replaceValue))
   }
+
+  /**
+   * @param {String} fieldName
+   * @param {String} validatedHandlerName
+   */
+  getPendingValidationHandler(fieldName, validatedHandlerName) {
+    return function() {
+      /** @type {FieldFlags} */
+      const field = this.fields[fieldName]
+      /** @type {Function} */
+      const validatedHandler = this[validatedHandlerName]
+      if (field.dirty && !field.pending && field.valid) {
+        validatedHandler()
+      }
+    }
+  }
 }
 
 export default new Validations()

@@ -72,6 +72,17 @@
             </div>
           </div>
           <div class="row">
+            <div class="col form-group">
+              <label>delayedField</label>
+              <input name="delayedField"
+                v-validate="'required|alpha|max:3'"
+                data-vv-delay="1500"
+                :title="errors | errorFilter('first', 'delayedField')"
+                type="text" class="form-control" autocomplete="off">
+              <div>
+                {{ fields.delayedField }}
+              </div>
+            </div>
             <div class="col form-group" v-if="false">
               <field-validation name="fieldName3" rules="required|alpha|min:3">
                 <input slot="input" name="fieldName3" type="text" class="form-control">

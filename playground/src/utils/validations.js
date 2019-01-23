@@ -1,23 +1,45 @@
+// eslint-disable-next-line no-unused-vars
+import { ErrorBag } from 'vee-validate'
+
+export const Filters = {
+  All: 'all',
+  First: 'first',
+  Collect: 'collect'
+}
+
 class Validations {
-  filter(errors, name, filter) {
+  /**
+   * @param {ErrorBag} errors
+   * @param {String} filter
+   * @param {String} name
+   */
+  filter(errors, filter, name) {
     let messages = []
-    const resolvedFilter = filter || 'first'
-    if (resolvedFilter === 'all') {
+    const resolvedFilter = filter || Filters.First
+    if (resolvedFilter === Filters.All) {
       messages.push(...errors.all())
-    } else if (resolvedFilter === 'first' && errors.has(name)) {
+    } else if (resolvedFilter === Filters.First && errors.has(name)) {
       messages.push(errors.first(name))
-    } else if (resolvedFilter === 'collect' && errors.has(name)) {
+    } else if (resolvedFilter === Filters.Collect && errors.has(name)) {
       messages.push(...errors.collect(name))
     }
-    if (name) {
-      messages = messages.map(m => m.replace(name + ' ', ''))
-    }
-    return messages.join('\n')
+    return messages
   }
 
-  replace(messages, name, replaceValue) {
-    const searchValue = replaceValue ? name : name + ' '
-    return messages.map(m => m.replace(searchValue, replaceValue))
+  /**
+   * @param {String[]} messages
+   * @param {String} fieldName
+   */
+  removeFieldName(messages, fieldName) {
+    return messages.map(m => m.replace(fieldName + ' ', ''))
+  }
+
+  /**
+   * @param {String[]} messages
+   * @param {String} replaceValue
+   */
+  replaceTokenFieldName(messages, replaceValue) {
+    return messages.map(m => m.replace('{field}', replaceValue))
   }
 }
 

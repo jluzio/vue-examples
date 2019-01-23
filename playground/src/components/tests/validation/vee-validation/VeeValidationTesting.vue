@@ -10,8 +10,8 @@
           <div class="row">
             <div class="col form-group">
               Locales:
-              <button @click="locale = 'en'">en</button>
-              <button @click="locale = 'pt_PT'">pt_PT</button>
+              <button class="btn" @click="locale = 'en'">en</button>
+              <button class="btn" @click="locale = 'pt_PT'">pt_PT</button>
             </div>
           </div>
           <div class="row">

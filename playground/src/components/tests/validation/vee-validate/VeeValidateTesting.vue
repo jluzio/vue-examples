@@ -73,14 +73,14 @@
           </div>
           <div class="row">
             <div class="col form-group">
-              <label>delayedField</label>
-              <input name="delayedField"
+              <label>delayedValField</label>
+              <input name="delayedValField"
                 v-validate="'required|alpha|max:3'"
                 data-vv-delay="1500"
-                :title="errors | errorFilter('first', 'delayedField')"
+                :title="errors | errorFilter('first', 'delayedValField')"
                 type="text" class="form-control" autocomplete="off">
               <div>
-                {{ fields.delayedField }}
+                {{ fields.delayedValField }}
               </div>
             </div>
             <div class="col form-group" v-if="false">
@@ -116,6 +116,7 @@ import ValidationMessages from './ValidationMessages.vue'
 import ValidationProviderMessages from './ValidationProviderMessages.vue'
 import localePtPt from 'vee-validate/dist/locale/pt_PT'
 // import localeEn from 'vee-validate/dist/locale/en'
+import $appCfg from '@/$appCfg'
 
 export default {
   components: {
@@ -145,6 +146,13 @@ export default {
         'pt_PT': localePtPt
       }
       Validator.localize(locale, localesMap[locale])
+    },
+    'fields.delayedValField.pending'(value) {
+      const field = this.fields.delayedValField
+      console.log('field', JSON.stringify(field))
+      if (field.dirty && !field.pending && field.valid) {
+        $appCfg.libs.toasted.show('validated delayedValField', { position: 'top-center', duration: 2000 })
+      }
     }
   }
 }

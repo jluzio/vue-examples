@@ -11,8 +11,8 @@
 
 <script>
 import VuelidateTesting from './validation/vuelidate/VuelidateTesting.vue'
-import VeeValidateTesting from './validation/vee-validation/VeeValidateTesting.vue'
-import VeeValidateProviderTesting from './validation/vee-validation/VeeValidateProviderTesting.vue'
+import VeeValidateTesting from './validation/vee-validate/VeeValidateTesting.vue'
+import VeeValidateProviderTesting from './validation/vee-validate/VeeValidateProviderTesting.vue'
 
 export default {
   components: {

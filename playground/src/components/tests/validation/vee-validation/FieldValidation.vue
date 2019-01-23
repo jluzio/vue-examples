@@ -4,19 +4,19 @@
       <label>{{name}}</label>
       <slot name="input" />
       errors: {{errors}}
-      <validation-messages source="provider" :name="name" :messages="errors" />
+      <validation-provider-messages :messages="errors" :name="name" />
     </div>
   </validation-provider>
 </template>
 
 <script>
 import { ValidationProvider } from 'vee-validate'
-import ValidationMessages from './ValidationMessages.vue'
+import ValidationProviderMessages from './ValidationProviderMessages.vue'
 
 export default {
   components: {
     ValidationProvider,
-    ValidationMessages
+    ValidationProviderMessages
   },
   props: {
     name: { type: String, default: null },

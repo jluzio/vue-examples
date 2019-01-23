@@ -14,9 +14,19 @@ https://vuex.vuejs.org/
 Javascript ES6 features
 http://es6-features.org/#Constants
 
+Validation
+https://baianat.github.io/vee-validate/
+https://monterail.github.io/vuelidate/
+
 VS Code Import with @
 https://gist.github.com/BlackMix/1c484c7bf4d70cbd15a91ebfa59a7b16
 <workspaceRoot>/jsconfig.json:
+
+
+--- Research ---
+https://github.com/kazupon/vue-i18n/
+https://vuetifyjs.com/en/getting-started/quick-start
+--- Research (end) ---
 
 Problems with imports:
  - not configuring a jsconfig.json makes "@/" imports not recignized by VS Code IntelliSense
@@ -70,7 +80,7 @@ Changes to doc:
       "request": "launch",
       "name": "vuejs: chrome",
       "url": "http://localhost:4000",
-      "webRoot": "${workspaceFollder}/src",
+      "webRoot": "${workspaceFolder}/src",
       "breakOnLoad": true,
       "sourceMapPathOverrides": {
         "webpack:///src/*": "${webRoot}/*",

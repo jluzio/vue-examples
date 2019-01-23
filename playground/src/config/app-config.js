@@ -37,7 +37,7 @@ export class Utils {
 
 export default class AppConfig {
   /** @type {Libraries} */
-  lib = new Libraries()
+  libs = new Libraries()
   /** @type {Logger} */
   log = null
   /** @type {ServiceFactory} */

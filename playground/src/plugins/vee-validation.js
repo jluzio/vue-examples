@@ -1,7 +1,19 @@
 import Vue from 'vue'
 import VeeValidate from 'vee-validate'
+// import VeeValidate, { Validator } from 'vee-validate'
+// import localePtPt from 'vee-validate/dist/locale/pt_PT'
 
-Vue.use(VeeValidate)
+// Note params:
+// classes: check if it's worth using due to lots of classes added
+// validity: check if it's worth using due potential clash
+
+Vue.use(VeeValidate, {
+  classes: true,
+  validity: true
+})
+
+// Localize takes the locale object as the second argument (optional) and merges it.
+// Validator.localize('pt_PT', localePtPt)
 
 /*
 -- default --

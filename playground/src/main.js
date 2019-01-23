@@ -9,11 +9,13 @@ import './plugins/jquery-datepicker'
 import './plugins/moment'
 import './plugins/toasted'
 import './plugins/vee-validation'
+import './plugins/vuelidate'
 import 'jquery-ui-themes/themes/base/jquery-ui.css'
 import 'jquery-ui-themes/themes/base/jquery-ui.min.css'
 import './plugins/directives'
 import './plugins/filters'
 import './plugins/app-config'
+import i18n from './plugins/i18n'
 
 import './config/app-config-core-config'
 
@@ -29,5 +31,6 @@ Vue.config.productionTip = false
 new Vue({
   router,
   store,
+  i18n,
   render: h => h(App)
 }).$mount('#app')

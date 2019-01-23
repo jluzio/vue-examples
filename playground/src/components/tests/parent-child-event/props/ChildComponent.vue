@@ -30,7 +30,7 @@ export default {
       const validationId = values[values.length - 1]
       const options = { position: 'top-center', duration: 2000 }
       const message = `${this.id} :: ${validationId}`
-      $appCfg.lib.toasted.show(message, options)
+      $appCfg.libs.toasted.show(message, options)
     }
   },
   methods: {

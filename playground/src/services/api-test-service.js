@@ -19,7 +19,7 @@ class ApiTestService {
 
   getPrivateResource() {
     debugLog('getPrivateResource')
-    return this.lib.axios.get(this.privateResourceUrl, {
+    return this.axios.get(this.privateResourceUrl, {
       headers: { 'Authorization': store.getters.getToken }
     })
       .then((response) => {

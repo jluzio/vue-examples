@@ -6,8 +6,8 @@ import $appCfg from '@/$appCfg'
 // Workaround: local var
 const cfg = $appCfg
 cfg.log = Vue.prototype.$log
-cfg.lib.axios = Vue.prototype.$axios
-cfg.lib.debug = Vue.prototype.$debug
-cfg.lib.jQuery = Vue.prototype.$jQuery
-cfg.lib.moment = Vue.prototype.$moment
-cfg.lib.toasted = Vue.prototype.$toasted
+cfg.libs.axios = Vue.prototype.$axios
+cfg.libs.debug = Vue.prototype.$debug
+cfg.libs.jQuery = Vue.prototype.$jQuery
+cfg.libs.moment = Vue.prototype.$moment
+cfg.libs.toasted = Vue.prototype.$toasted

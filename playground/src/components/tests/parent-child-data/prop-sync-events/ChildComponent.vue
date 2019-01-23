@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import {twoWayBindingPropertyGenerator} from '@/utils/bindings'
+import { twoWayBindingPropertyGenerator } from '@/utils/bindings'
 
 export default {
   props: ['mail', 'select1', 'select2', 'textarea'],

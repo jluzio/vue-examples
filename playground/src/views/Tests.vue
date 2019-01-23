@@ -41,6 +41,7 @@ import EcmaScriptTesting from '@/components/tests/EcmaScriptTesting.vue'
 import DelayedUpdateInputTesting from '@/components/tests/DelayedUpdateInputTesting.vue'
 import WatcherTesting from '@/components/tests/WatcherTesting.vue'
 import ValidationTesting from '@/components/tests/ValidationTesting.vue'
+import I18nTesting from '@/components/tests/I18nTesting.vue'
 
 // Note: components in @/components with Base prefix get automatically loaded due to global-components.js
 const TEST_COMPONENTS = {
@@ -65,15 +66,12 @@ const TEST_COMPONENTS = {
   EcmaScriptTesting,
   DelayedUpdateInputTesting,
   WatcherTesting,
-  ValidationTesting
+  ValidationTesting,
+  I18nTesting
 }
 
 export default {
-  components: Object.assign(
-    {},
-    { TestTabLink },
-    TEST_COMPONENTS
-  ),
+  components: Object.assign({ TestTabLink }, TEST_COMPONENTS),
   data() {
     return {
       activeComponent: 'ValidationTesting',

@@ -9,4 +9,4 @@ const twoWayBindingPropertyGenerator = () => (propertyName) => {
   }
 }
 
-export {twoWayBindingPropertyGenerator}
+export { twoWayBindingPropertyGenerator }

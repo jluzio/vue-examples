@@ -76,8 +76,8 @@
               <label>delayedValField</label>
               <input name="delayedValField"
                 v-validate="'required|alpha|max:3'"
-                data-vv-delay="1500"
-                :title="errors | errorFilter('first', 'delayedValField')"
+                data-vv-delay="1000"
+                :title="errors | errTipField('delayedValField', 'first')"
                 type="text" class="form-control" autocomplete="off">
               <div>
                 {{ fields.delayedValField }}

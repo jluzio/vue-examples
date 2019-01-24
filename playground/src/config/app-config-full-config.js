@@ -9,6 +9,6 @@ import i18n from '@/i18n'
 // BUG atm: assignments to imported instance $appCfg breaks IntelliSense
 // Workaround: local var
 const cfg = $appCfg
-cfg.store = store
-cfg.services = services
 cfg.i18n = i18n
+cfg.services = services
+cfg.store = store

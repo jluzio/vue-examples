@@ -1,5 +1,4 @@
 /* eslint-disable no-unused-vars */
-import Vue from 'vue'
 import $appCfg from '@/$appCfg'
 import store from '@/store'
 import services from '@/services'

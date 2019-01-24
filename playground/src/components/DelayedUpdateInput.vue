@@ -8,7 +8,7 @@ export default {
   props: {
     type: { type: String, default: 'text' },
     value: { type: String, default: null },
-    timeout: { type: Number, default: 2000 }
+    timeout: { type: Number, default: 1000 }
   },
   data() {
     return {

@@ -90,7 +90,7 @@ import objects from '@/utils/objects'
 // const mapStateTest = testMappers.mapState
 
 export default {
-  name: 'StoreTesting',
+  name: 'StoreTest',
   data() {
     return {
       objectDataForm: null,

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <dependency-injection-testing-target />
+    <dependency-injection-test-target />
   </div>
 </template>
 
@@ -11,7 +11,7 @@ It is NOT recommended to use them in generic application code.
 */
 
 // Should be in some other file
-import DependencyInjectionTestingTarget from './DependencyInjectionTestingTarget.vue'
+import DependencyInjectionTestTarget from './DependencyInjectionTestTarget.vue'
 
 class Foo {
   bar() {}
@@ -30,7 +30,7 @@ class FooB extends Foo {
 }
 
 export default {
-  name: 'DependencyInjectionTesting',
+  name: 'DependencyInjectionTest',
   props: {
     msg: String
   },
@@ -40,7 +40,7 @@ export default {
     }
   },
   components: {
-    DependencyInjectionTestingTarget
+    DependencyInjectionTestTarget
   }
 }
 

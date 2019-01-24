@@ -8,9 +8,9 @@
         </div>
         <div>Parent Counter: {{ counter }}</div>
         <div class="row col-6 mx-auto">
-          <event-testing-target class="col" ref="child1" @increment-parent-counter="onIncrementCounter" />
-          <event-testing-target class="col" ref="child2" @increment-parent-counter="onIncrementCounter" />
-          <event-testing-target class="col" ref="child3" @increment-parent-counter="onIncrementCounter" />
+          <event-test-target class="col" ref="child1" @increment-parent-counter="onIncrementCounter" />
+          <event-test-target class="col" ref="child2" @increment-parent-counter="onIncrementCounter" />
+          <event-test-target class="col" ref="child3" @increment-parent-counter="onIncrementCounter" />
         </div>
       </li>
       <li class="list-group-item">
@@ -20,7 +20,7 @@
       <li class="list-group-item">
         <h5>twoWay</h5>
         twoWayVar: {{ twoWayVar }}
-        <event-testing-two-way-target :twoWayProp.sync="twoWayVar" />
+        <event-test-two-way-target :twoWayProp.sync="twoWayVar" />
       </li>
     </ul>
   </div>
@@ -37,12 +37,12 @@ For these reasons, we recommend you always use kebab-case for event names.
 */
 
 import { eventBus } from '@/services/event-bus'
-import EventTestingTarget from './EventTestingTarget.vue'
-import EventTestingTwoWayTarget from './EventTestingTwoWayTarget.vue'
+import EventTestTarget from './EventTestTarget.vue'
+import EventTestTwoWayTarget from './EventTestTwoWayTarget.vue'
 
 export default {
-  name: 'EventTesting',
-  components: { EventTestingTarget, EventTestingTwoWayTarget },
+  name: 'EventTest',
+  components: { EventTestTarget, EventTestTwoWayTarget },
   data() {
     return {
       counter: 0,

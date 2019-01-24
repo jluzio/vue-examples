@@ -3,11 +3,11 @@
     <ul class="list-group">
       <li class="list-group-item">
         <p>named slots:</p>
-        <slot-testing-target :class="layoutSlotClasses">
+        <slot-test-target :class="layoutSlotClasses">
           <div>default slot values</div>
           <template slot="header">slot header</template>
           <p slot="footer">slot footer</p>
-        </slot-testing-target>
+        </slot-test-target>
       </li>
       <li class="list-group-item">
         <p>Scoped Slots:</p>
@@ -32,12 +32,12 @@
 </template>
 
 <script>
-import SlotTestingTarget from './SlotTestingTarget.vue'
+import SlotTestTarget from './SlotTestTarget.vue'
 import TodoList from './TodoList.vue'
 
 export default {
-  name: 'SlotTesting',
-  components: { SlotTestingTarget, TodoList },
+  name: 'SlotTest',
+  components: { SlotTestTarget, TodoList },
   data() {
     return {
       todos: [

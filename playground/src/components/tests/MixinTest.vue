@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h5>MixinTesting</h5>
+    <h5>MixinTest</h5>
     <ul class="list-group">
       <li v-for="(data, index) in [data1, data2, data3]" :key="index" class="list-group-item">data{{ index+1 }}: {{ data }}</li>
     </ul>
@@ -28,7 +28,7 @@ const MyMixin = {
 }
 
 export default {
-  name: 'MixinTesting',
+  name: 'MixinTest',
   data() {
     return {
       data1: 'data1',

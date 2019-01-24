@@ -32,7 +32,7 @@ const CustomAsyncComponent = () => ({
 })
 
 export default {
-  name: 'AsyncComponentTesting',
+  name: 'AsyncComponentTest',
   components: {
     EmptyComponent,
     AsyncComponent: () => import('./AsyncComponent.vue'),

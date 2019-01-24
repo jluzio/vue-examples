@@ -1,10 +1,10 @@
 <template>
   <div class="container">
-    <h5>DelayedUpdateInput Testing</h5>
+    <h5>DelayedUpdateInput Test</h5>
     <div class="row btn-fix-container mt-2">
       <div class="row">
         <div>text: {{text}}</div>
-        <delayed-update-input :value.sync="text" :timeout="1000" class="testy-class" placeholder="testing" />
+        <delayed-update-input :value.sync="text" :timeout="1000" class="testy-class" placeholder="test" />
         <input type="text" :value="expensiveComputedValue" class="form-control" placeholder="expensive computed value" >
       </div>
     </div>

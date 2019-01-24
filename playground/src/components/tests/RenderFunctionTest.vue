@@ -5,7 +5,7 @@
       <li class="list-group-item">
         <p>@anchored-heading</p>
         <anchored-heading :level="2">
-          testing
+          test
         </anchored-heading>
       </li>
       <li class="list-group-item">

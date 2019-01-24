@@ -35,8 +35,10 @@ class ValidationUtil {
         if (!this.flagKey(validationId) && !validation[validationId]) {
           const ctx = name ? `[${name}]` : ''
           const msgKey = 'validation.' + validationId
-          let msg = $appCfg.i18n.t(msgKey)
-          if (msg === msgKey) {
+          let msg = null
+          if ($appCfg.i18n.te(msgKey)) {
+            msg = $appCfg.i18n.t(msgKey)
+          } else {
             msg = `Validation${ctx} :: ${validationId} failed`
           }
           messages.push(msg)

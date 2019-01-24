@@ -1,6 +1,5 @@
 // eslint-disable-next-line no-unused-vars
 import { ErrorBag } from 'vee-validate'
-import validations from '@/utils/validations'
 
 /**
  * @param {ErrorBag} errors
@@ -11,14 +10,14 @@ import validations from '@/utils/validations'
 export default function (errors, name, filter, ...params) {
   let messages = null
   if (errors.has(name)) {
-    const filterResult = errors[filter].apply(errors, [name].concat(...params))
+    const filterResult = errors[filter].apply(errors, params)
     if (filterResult) {
       messages = Array.isArray(filterResult) ? filterResult : [filterResult]
     }
   }
   let tooltip = null
   if (messages) {
-    tooltip = validations.removeFieldName(messages, name).join('\n')
+    tooltip = messages.join('\n')
   }
   return tooltip
 }

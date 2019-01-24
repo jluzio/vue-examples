@@ -1,3 +1,5 @@
 {
-  "message": "hello i18n !!"
+  "message": "hello i18n !!",
+  "validation.required": "Field is required",
+  "validation.minLength": "Field minLength failed"
 }

@@ -9,42 +9,17 @@
 </template>
 
 <script>
+import validationUtil from '@/utils/vuelidate-util'
+
 export default {
   props: {
-    validation: { default: {} },
-    global: { type: Boolean, default: false },
+    validation: { default: () => {} },
+    nested: { type: Boolean, default: false },
     messageClasses: { default: 'error' }
   },
   computed: {
     messages() {
-      let messages = []
-      if (this.global) {
-        Object.keys(this.validation).forEach(fieldName => {
-          if (!this.flagKey(fieldName)) {
-            messages.push(...this.validationMessages(this.validation[fieldName], fieldName))
-          }
-        })
-      } else {
-        messages.push(...this.validationMessages(this.validation, null))
-      }
-      return messages
-    }
-  },
-  methods: {
-    validationMessages(validation, name) {
-      let messages = []
-      if (validation.$invalid) {
-        for (let validationId in validation) {
-          if (!this.flagKey(validationId) && !validation[validationId]) {
-            const ctx = name ? `[${name}]` : ''
-            messages.push(`Validation${ctx} :: ${validationId} failed`)
-          }
-        }
-      }
-      return messages
-    },
-    flagKey(key) {
-      return key.startsWith('$')
+      return validationUtil.validationsMessages(this.validation, this.nested)
     }
   }
 }

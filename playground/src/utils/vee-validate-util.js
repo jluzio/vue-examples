@@ -7,7 +7,7 @@ export const Filters = {
   Collect: 'collect'
 }
 
-class Validations {
+class ValidationUtil {
   /**
    * @param {ErrorBag} errors
    * @param {String} filter
@@ -59,4 +59,4 @@ class Validations {
   }
 }
 
-export default new Validations()
+export default new ValidationUtil()

@@ -117,6 +117,7 @@ import ValidationProviderMessages from './ValidationProviderMessages.vue'
 import localePtPt from 'vee-validate/dist/locale/pt_PT'
 // import localeEn from 'vee-validate/dist/locale/en'
 import $appCfg from '@/$appCfg'
+import validationUtil from '@/utils/vee-validate-util'
 
 export default {
   components: {
@@ -147,7 +148,7 @@ export default {
       }
       Validator.localize(locale, localesMap[locale])
     },
-    'fields.delayedValField.pending': $appCfg.utils.validations.getPendingValidationHandler('delayedValField', 'handleValidation')
+    'fields.delayedValField.pending': validationUtil.getPendingValidationHandler('delayedValField', 'handleValidation')
     /*
     'fields.delayedValField.pending'(value) {
       const field = this.fields.delayedValField

@@ -22,7 +22,7 @@ export default {
   },
   data() {
     return {
-      activeComponent: 'VeeValidateTesting'
+      activeComponent: 'VuelidateTesting'
     }
   }
 }

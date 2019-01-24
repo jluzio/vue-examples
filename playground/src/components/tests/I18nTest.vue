@@ -10,7 +10,10 @@
     </div>
     <ul class="list-group">
       <li class="list-group item">
-        message: {{$t('message')}}
+        message: {{$t('test.message')}} | exists: {{$te('test.message')}}
+      </li>
+      <li class="list-group item">
+        message: {{$t('test.message_locale_specific')}} | exists: {{$te('test.message_locale_specific')}}
       </li>
     </ul>
   </div>
@@ -21,7 +24,7 @@ export default {
   data() {
     return {
       locale: this.$i18n.locale,
-      availableLocales: ['en', 'pt_PT']
+      availableLocales: ['en', 'pt', 'pt_PT']
     }
   },
   watch: {

@@ -16,7 +16,10 @@
               <input v-model="text1" type="text" :class="{'form-control': true, 'invalid': $v.text1.$invalid, 'valid': !$v.text1.$invalid}"
                 :title="$v.text1 | valTip"
               />
-              <validation-messages :validation="$v.text1" />
+              <ul>
+                <li class="error" v-if="!$v.text1.required">required failed</li>
+                <li class="error" v-if="!$v.text1.minLength">minLength failed</li>
+              </ul>
               <validation-debug :validation="$v.text1" />
             </div>
             <div class="col form-group">
@@ -25,6 +28,13 @@
               />
               <validation-messages :validation="$v.text2" />
               <validation-debug :validation="$v.text2" keys="sameAsText1" />
+            </div>
+            <div class="col form-group">
+              <label>text3</label>
+              <input v-model="text3" type="text" :class="{'form-control': true} | valClasses($v.text3)" :title="$v.text3 | valTip"
+              />
+              <validation-messages :validation="$v.text3" />
+              <validation-debug :validation="$v.text3" keys="sameAsText2" />
             </div>
           </div>
           <div class="row">
@@ -143,7 +153,11 @@ export default {
       minLength: minLength(4)
     },
     text2: {
-      sameAsText1: sameAs('text1')
+      required,
+      minLength: minLength(4)
+    },
+    text3: {
+      sameAsText2: sameAs('text2')
     },
     dirtyCheckVal: {
       required,

@@ -19,7 +19,7 @@ export default {
   },
   computed: {
     messages() {
-      return validationUtil.validationsMessages(this.validation, this.nested)
+      return validationUtil.validationsMessages(this.validation, this.nested, this.$i18n)
     }
   }
 }

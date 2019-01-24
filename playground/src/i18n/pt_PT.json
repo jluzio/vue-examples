@@ -1,3 +1,5 @@
 {
-  "message": "olá i18n !!"
+  "test": {
+    "message": "message (pt_PT)"
+  }
 }

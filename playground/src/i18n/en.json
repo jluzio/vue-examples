@@ -1,5 +1,10 @@
 {
-  "message": "hello i18n !!",
-  "validation.required": "Field is required",
-  "validation.minLength": "Field minLength failed"
+  "test": {
+    "message": "message (en)",
+    "message_locale_specific": "message_locale_specific (en)"
+  },
+  "validation": {
+    "required": "Field is required",
+    "minLength": "Field minLength failed"
+  }
 }

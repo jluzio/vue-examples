@@ -42,6 +42,7 @@ import DelayedUpdateInputTest from '@/components/tests/DelayedUpdateInputTest.vu
 import WatcherTest from '@/components/tests/WatcherTest.vue'
 import ValidationTest from '@/components/tests/ValidationTest.vue'
 import I18nTest from '@/components/tests/I18nTest.vue'
+import TypeDefinitionsTest from '@/components/tests/TypeDefinitionsTest.vue'
 
 // Note: components in @/components with Base prefix get automatically loaded due to global-components.js
 const TEST_COMPONENTS = {
@@ -67,14 +68,15 @@ const TEST_COMPONENTS = {
   DelayedUpdateInputTest,
   WatcherTest,
   ValidationTest,
-  I18nTest
+  I18nTest,
+  TypeDefinitionsTest
 }
 
 export default {
   components: Object.assign({ TestTabLink }, TEST_COMPONENTS),
   data() {
     return {
-      activeComponent: 'ValidationTest',
+      activeComponent: 'TypeDefinitionsTest',
       testComponents: TEST_COMPONENTS
     }
   },

@@ -14,14 +14,15 @@
             <div class="col form-group">
               <label>text1</label>
               <input v-model="text1" type="text" :class="{'form-control': true, 'invalid': $v.text1.$invalid, 'valid': !$v.text1.$invalid}"
-                :title="$v.text1 | errTip"
+                :title="$v.text1 | valTip"
               />
               <validation-messages :validation="$v.text1" />
               <validation-debug :validation="$v.text1" />
             </div>
             <div class="col form-group">
               <label>text2</label>
-              <input v-model="text2" type="text" class="form-control">
+              <input v-model="text2" type="text" :class="{'form-control': true} | valClasses($v.text2)" :title="$v.text2 | valTip"
+              />
               <validation-messages :validation="$v.text2" />
               <validation-debug :validation="$v.text2" keys="sameAsText1" />
             </div>
@@ -100,10 +101,9 @@
 </template>
 
 <script>
-import Vue from 'vue'
 import ValidationMessages from './ValidationMessages.vue'
-import ValidationDebug from './ValidationDebug.vue'
 import DelayedUpdateInput from '@/components/DelayedUpdateInput.vue'
+import ValidationDebug from './ValidationDebug.vue'
 import { required, minLength, between, sameAs, email } from 'vuelidate/lib/validators'
 import validationUtil from '@/utils/vuelidate-util'
 import $appCfg from '@/$appCfg'

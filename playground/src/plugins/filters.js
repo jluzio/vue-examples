@@ -2,7 +2,8 @@ import Vue from 'vue'
 import UppercaseFilter from '@/filters/uppercase-filter'
 import SubstringFilter from '@/filters/substring-filter'
 import QuoteFilter from '@/filters/quote-filter'
-import ErrorTipFilter from '@/filters/error-tip-filter'
+import ValTipFilter from '@/filters/val-tip-filter'
+import ValClassesFilter from '@/filters/val-classes-filter'
 
 const Plugin = {
   install(Vue, options) {
@@ -10,7 +11,8 @@ const Plugin = {
     Vue.filter('substring', SubstringFilter)
     Vue.filter('substr', SubstringFilter)
     Vue.filter('quote', QuoteFilter)
-    Vue.filter('errTip', ErrorTipFilter)
+    Vue.filter('valTip', ValTipFilter)
+    Vue.filter('valClasses', ValClassesFilter)
   }
 }
 

@@ -28,6 +28,32 @@ https://www.typescriptlang.org/docs/handbook/declaration-files/publishing.html
 - package.json -
 types: <path to x.d.ts>
 
+VS Code config:
+- auto reveal: auto show file in explorer, disable and set shortcut (alt-q)
+
+<config file>
+{
+  "editor.tabSize": 2,
+  "editor.suggestSelection": "recentlyUsedByPrefix",
+  "explorer.autoReveal": false
+  "vetur.format.defaultFormatter.js": "vscode-typescript",
+  "eslint.autoFixOnSave": true,
+  "eslint.validate": [
+    {
+      "language": "vue",
+      "autoFix": true
+    },
+    {
+      "language": "html",
+      "autoFix": true
+    },
+    {
+      "language": "javascript",
+      "autoFix": true
+    }
+  ]
+}
+
 --- Research ---
 https://github.com/kazupon/vue-i18n/
 https://vuetifyjs.com/en/getting-started/quick-start

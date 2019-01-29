@@ -15,6 +15,7 @@
 
 <script>
 import objects from '@/utils/objects'
+
 export default {
   props: ['form'],
   data() {

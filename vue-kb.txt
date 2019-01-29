@@ -171,6 +171,18 @@ https://code.visualstudio.com/docs/getstarted/userinterface#_preview-mode
 
 -- Issues --
 - If v-for'ing without v-key, updates might not work
+key: Hint at VNodes identity for VDom diffing, e.g. list rendering
+Note: key must be unique and also get a changed property.
+Ex:
+<passenger-input v-for="(passenger,index) of form.passengers.collaborators" :key="passenger.registerNumber + passenger.employeeNumber"
+  :passenger.sync="passenger" :correlation-id="form.correlationId" :validator="getCollaboratorValidator(index)"
+  :removable="form.passengers.collaborators.length > 1" @remove="removeCollaborator(index)" />
+Cenarios:
+ - :key="passenger.registerNumber + passenger.employeeNumber" :: works
+ - :key="passenger.registerNumber" :: doesn't work (when not changed)
+ - :key="passenger.employeeNumber" :: works but gives error on selecting same passenger
+ - :key="index" :: doesn't work (same index was changed)
+TODO: understand this better
 
 - Plugins
  - Vetur (octref.vetur)

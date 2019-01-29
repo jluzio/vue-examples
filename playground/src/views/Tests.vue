@@ -76,7 +76,7 @@ export default {
   components: Object.assign({ TestTabLink }, TEST_COMPONENTS),
   data() {
     return {
-      activeComponent: 'TypeDefinitionsTest',
+      activeComponent: 'ParentChildDataTest',
       testComponents: TEST_COMPONENTS
     }
   },

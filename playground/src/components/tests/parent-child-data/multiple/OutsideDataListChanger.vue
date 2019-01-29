@@ -9,7 +9,7 @@
       </div>
     </div>
     <div class="row actions">
-      <div class="ml-3 col-6">
+      <div class="m-auto pt-2">
         <button @click="changeItem" class="btn btn-primary">change item</button>
       </div>
     </div>
@@ -26,14 +26,19 @@ export default {
   },
   data() {
     return {
-      item: { id: 0, name: null }
+      item: new Item()
     }
   },
   methods: {
     changeItem() {
       const updatedItem = Object.assign(new Item(), this.item)
-      const index = this.dataObject.items.filter(i => i.id === this.item.id)
-      this.dataObject.items.splice(index, 1, updatedItem)
+      const index = this.dataObject.items.findIndex(i => Number(i.id) === Number(this.item.id))
+      if (index >= 0) {
+        const dataObjectData = Object.assign(new DataObject(), this.dataObject)
+        dataObjectData.items.splice(index, 1, updatedItem)
+        console.log('update:dataObject', dataObjectData)
+        this.$emit('update:dataObject', dataObjectData)
+      }
     }
   }
 }

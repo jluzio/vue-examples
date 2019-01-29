@@ -1,6 +1,6 @@
 <template>
   <div class="data-list">
-    <data-list-item v-for="item of dataObject.items" :key="item.id" :item="item" />
+    <data-list-item v-for="item of dataObject.items" :key="item.id" :item.sync="item" />
   </div>
 </template>
 

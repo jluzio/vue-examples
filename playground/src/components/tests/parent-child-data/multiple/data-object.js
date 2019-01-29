@@ -1,6 +1,6 @@
 export class Item {
   /**
-   * @param {String} id
+   * @param {Number} id
    * @param {String} name
    */
   constructor(id, name) {

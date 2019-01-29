@@ -1,7 +1,12 @@
 <template>
   <div class="test">
-    <data-list :data-object="dataObject" />
-    <outside-data-list-changer :data-object="dataObject" />
+    <data-list :data-object.sync="dataObject" />
+    <outside-data-list-changer :data-object.sync="dataObject" />
+    <ul class="list-group">
+      <li class="list-group-item" v-for="item of dataObject.items" :key="'li_item_' + item.id">
+        {{item}}
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -27,5 +32,6 @@ export default {
 <style>
 .test {
   width: 50%;
+  margin: 0 auto;
 }
 </style>

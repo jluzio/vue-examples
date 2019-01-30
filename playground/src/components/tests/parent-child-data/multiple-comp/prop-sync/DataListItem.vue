@@ -1,19 +1,22 @@
 <template>
   <div class="row">
-    <div class="col-3">{{data.id}}</div>
-    <div class="col-9">
-      <input type="text" v-model="data.name">
+    <div :class="cssFields.fieldLeft">
+      <label>{{data.id}}</label>
+    </div>
+    <div :class="cssFields.fieldRight">
+      <input type="text" v-model="data.name" class="form-control">
     </div>
   </div>
 </template>
 
 <script>
 // eslint-disable-next-line no-unused-vars
-import { DataObject, Item } from './data-object'
+import { DataObject, Item } from '../data-object'
 
 export default {
   props: {
-    item: Item
+    item: Item,
+    cssFields: null
   },
   data() {
     return {

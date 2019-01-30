@@ -168,6 +168,17 @@ https://code.visualstudio.com/docs/getstarted/userinterface#_preview-mode
     ]
 }
 
+-- v-for --
+Whenever you manipulate a list in a way that results in a change of indexes, you have to use a key so Vue can update the DOM correctly after these changes.
+
+These manipulations include:
+
+adding an item to an array, in any place other than the end of the array
+removing an item from an array, from any place other than the end of the array
+re-ordering (sorting) the array in any way.
+If your list is never changed during the lifetime of your component, or you only append items, you don’t need a key.
+
+Since in real life, you will often find your self switching from the “not needing a key” bucket to the “needing a key” bucket as requirements change, we recommend to make it a habbit and always key all your for loops.
 
 -- Issues --
 - If v-for'ing without v-key, updates might not work

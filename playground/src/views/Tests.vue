@@ -44,6 +44,7 @@ import ValidationTest from '@/components/tests/ValidationTest.vue'
 import I18nTest from '@/components/tests/I18nTest.vue'
 import TypeDefinitionsTest from '@/components/tests/TypeDefinitionsTest.vue'
 import RouterTest from '@/components/tests/RouterTest.vue'
+import ObservableObjectsTest from '@/components/tests/ObservableObjectsTest.vue'
 
 // Note: components in @/components with Base prefix get automatically loaded due to global-components.js
 const TEST_COMPONENTS = {
@@ -71,7 +72,8 @@ const TEST_COMPONENTS = {
   ValidationTest,
   I18nTest,
   TypeDefinitionsTest,
-  RouterTest
+  RouterTest,
+  ObservableObjectsTest
 }
 
 export default {

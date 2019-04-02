@@ -258,3 +258,19 @@ export default Plugin;
 
 - main.js
 import 'plugins/jquery'
+
+-- Resource urls --
+> Example in CSS "~@<path>":
+src: url("~@/assets/fonts/Montserrat/Montserrat-Regular.ttf") format("truetype"); }
+> Example in templates "@":
+import $appCfg from '@/$appCfg'
+
+-- Jdoc --
+  /**
+   * @param {import('vue-router').Route} route
+   */
+
+  /**
+   * @param {Object.<string,Foo>} fooMap
+   */
+

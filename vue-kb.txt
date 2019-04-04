@@ -59,6 +59,9 @@ https://github.com/kazupon/vue-i18n/
 https://vuetifyjs.com/en/getting-started/quick-start
 --- Research (end) ---
 
+JSDoc:
+http://usejsdoc.org/
+
 Problems with imports:
  - not configuring a jsconfig.json makes "@/" imports not recignized by VS Code IntelliSense
  - not including "target" makes lib.d.ts use the lowest version

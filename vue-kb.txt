@@ -62,6 +62,37 @@ https://vuetifyjs.com/en/getting-started/quick-start
 JSDoc:
 http://usejsdoc.org/
 
+/**
+ * Assign the project to an employee.
+ * @param {Object} employee - The employee who is responsible for the project.
+ * @param {string} employee.name - The name of the employee.
+ * @param {string} employee.department - The employee's department.
+ */
+Project.prototype.assign = function({ name, department }) {
+    // ...
+};
+
+/**
+ * @typedef {import('vue-router').Route} Route
+ * @typedef {import('axios').AxiosError} AxiosError
+ * @typedef {import('./service-config').default} ServiceConfig
+ *
+ * @typedef {Object} LoadingHandlerDef
+ * @property {loadingHandler} start
+ * @property {loadingHandler} done
+ *
+ * @callback loadingHandler
+ * @param {InvocationContext} ctx
+ *
+ * @callback thenHandler
+ * @param {*} response
+ * @param {InvocationContext} ctx
+ *
+ * @callback catchHandler
+ * @param {String|Message[]|Object} reason
+ * @param {InvocationContext} ctx
+ */
+
 Problems with imports:
  - not configuring a jsconfig.json makes "@/" imports not recignized by VS Code IntelliSense
  - not including "target" makes lib.d.ts use the lowest version

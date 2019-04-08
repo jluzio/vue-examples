@@ -172,12 +172,21 @@ module.exports = {
   // ...
 }
 
-> Intellisense
+> IntelliSense
 https://code.visualstudio.com/docs/editor/intellisense
 editor.suggestSelection
 recentlyUsed -> recentlyUsedByPrefix | first
 > Preview Mode
 https://code.visualstudio.com/docs/getstarted/userinterface#_preview-mode
+
+- BUG with Arrays values: Array breaks IntelliSense
+Workaround:
+export default {
+  props: {
+    values: { type: Array, default: () => [] }
+  }
+}
+...
 
 > VS Code workspace settings
 -- settings.json --

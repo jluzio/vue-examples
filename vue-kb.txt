@@ -55,6 +55,7 @@ VS Code config:
 }
 
 --- Research ---
+https://vuejsexamples.com/
 https://github.com/kazupon/vue-i18n/
 https://vuetifyjs.com/en/getting-started/quick-start
 --- Research (end) ---

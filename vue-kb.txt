@@ -18,6 +18,9 @@ Validation
 https://baianat.github.io/vee-validate/
 https://monterail.github.io/vuelidate/
 
+Nuxt
+https://nuxtjs.org/
+
 VS Code Import with @
 https://gist.github.com/BlackMix/1c484c7bf4d70cbd15a91ebfa59a7b16
 <workspaceRoot>/jsconfig.json:
@@ -55,6 +58,7 @@ VS Code config:
 }
 
 --- Research ---
+https://nuxtjs.org/
 https://vuejsexamples.com/
 https://github.com/kazupon/vue-i18n/
 https://vuetifyjs.com/en/getting-started/quick-start

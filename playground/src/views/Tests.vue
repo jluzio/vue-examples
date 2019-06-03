@@ -45,6 +45,7 @@ import I18nTest from '@/components/tests/I18nTest.vue'
 import TypeDefinitionsTest from '@/components/tests/TypeDefinitionsTest.vue'
 import RouterTest from '@/components/tests/RouterTest.vue'
 import ObservableObjectsTest from '@/components/tests/ObservableObjectsTest.vue'
+import ComputedPropsTest from '@/components/tests/ComputedPropsTest.vue'
 
 // Note: components in @/components with Base prefix get automatically loaded due to global-components.js
 const TEST_COMPONENTS = {
@@ -56,6 +57,7 @@ const TEST_COMPONENTS = {
   DynamicComponentTest,
   AsyncComponentTest,
   PropsTest,
+  ComputedPropsTest,
   MixinTest,
   SlotTest,
   TransitionTest,
@@ -80,13 +82,13 @@ export default {
   components: Object.assign({ TestTabLink }, TEST_COMPONENTS),
   data() {
     return {
-      activeComponent: 'ParentChildDataTest',
+      activeComponent: this.$route.query.t || 'ParentChildDataTest',
       testComponents: TEST_COMPONENTS
     }
   },
   computed: {
     testComponentNames() {
-      return Object.keys(this.testComponents)
+      return Object.keys(this.testComponents).sort()
     }
   },
   methods: {
@@ -95,6 +97,7 @@ export default {
     },
     handleSelectedTab(tabId) {
       this.activeComponent = tabId
+      this.$router.push({ name: 'tests', query: { t: tabId } })
     }
   }
 }

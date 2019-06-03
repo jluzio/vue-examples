@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div>{{counter}}</div>
-    <div>{{counterLabel}}</div>
-    <div>{{getCounterLabel()}}</div>
-    <div>{{otherValue}}</div>
+    <div>Counter: {{counter}}</div>
+    <div>Counter Label: {{counterLabel}}</div>
+    <div>Counter Label: {{getCounterLabel()}}</div>
+    <div>Other Value: {{otherValue}}</div>
     <div>
       <button @click="counter++">Counter+</button>
       <button @click="counter--">Counter-</button>

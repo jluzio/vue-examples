@@ -122,6 +122,11 @@ Current working jsconfig.json:
   "exclude": ["node_modules"]
 }
 
+-- Math issues --
+// Handling "big numbers" math to avoid floating number issues
+// https://www.npmjs.com/package/big.js
+// https://www.npmjs.com/package/bignumber.js
+
 --- VS Code ---
 > Debugging
 https://vuejs.org/v2/cookbook/debugging-in-vscode.html

@@ -25,6 +25,9 @@ VS Code Import with @
 https://gist.github.com/BlackMix/1c484c7bf4d70cbd15a91ebfa59a7b16
 <workspaceRoot>/jsconfig.json:
 
+Typescript:
+https://github.com/microsoft/TypeScript-Vue-Starter
+
 Type definitions:
 https://www.typescriptlang.org/docs/handbook/declaration-files/publishing.html
 <project>/index.d.ts

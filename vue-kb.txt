@@ -24,6 +24,7 @@ https://nuxtjs.org/
 VS Code Import with @
 https://gist.github.com/BlackMix/1c484c7bf4d70cbd15a91ebfa59a7b16
 <workspaceRoot>/jsconfig.json:
+"workbench.editor.enablePreviewFromQuickOpen": false
 
 Typescript:
 https://github.com/microsoft/TypeScript-Vue-Starter
@@ -69,6 +70,13 @@ https://vuetifyjs.com/en/getting-started/quick-start
 
 JSDoc:
 http://usejsdoc.org/
+
+-- Code --
+> Check for null or undefined (using == instead of ===):
+some_variable == null
+some_variable != null
+Note: Requires that some_variable has been declared, otherwise a ReferenceError will be thrown
+https://stackoverflow.com/questions/2559318/how-to-check-for-an-undefined-or-null-variable-in-javascript
 
 /**
  * Assign the project to an employee.

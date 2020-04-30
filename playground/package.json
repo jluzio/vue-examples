@@ -12,7 +12,7 @@
   "dependencies": {
     "bootstrap": "^4.3.1",
     "debug": "^4.1.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "jquery-datepicker": "^1.12.3",
     "jquery-ui-themes": "^1.12.0",
     "moment": "^2.24.0",

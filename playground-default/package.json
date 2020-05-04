@@ -8,7 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "jquery": "^3.3.1",
+    "jquery": "^3.5.0",
     "jquery-datepicker": "^1.12.3",
     "vue": "^2.5.16"
   },

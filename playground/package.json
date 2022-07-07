@@ -15,7 +15,7 @@
     "jquery": "^3.4.1",
     "jquery-datepicker": "^1.12.3",
     "jquery-ui-themes": "^1.12.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "popper.js": "^1.14.7",
     "vee-validate": "^2.2.0",
     "vue": "^2.6.10",
